@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Corner — Growth & Design KPIs</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#10131a; --ink-soft:#3c4452;
+    --muted:#6b7280; --faint:#9aa1ad; --line:#e7e9ee; --line-soft:#eef0f4;
+    --accent:#4f46e5; --accent-soft:#eef0fe; --accent-ink:#4338ca;
+    --green:#0f9d58; --green-bg:#e7f6ee; --amber:#b9770a; --amber-bg:#fdf2e1;
+    --blue:#2563eb; --blue-bg:#e8effd; --grey:#7a818c; --grey-bg:#eef0f3;
+    --shadow:0 1px 2px rgba(16,19,26,.04),0 4px 16px rgba(16,19,26,.05);
+    --radius:14px;
+  }
+  html[data-theme="dark"]{
+    --bg:#0d0f14; --panel:#161922; --ink:#eef1f6; --ink-soft:#c4cad6;
+    --muted:#9aa1ad; --faint:#6b7280; --line:#262b36; --line-soft:#1e222c;
+    --accent:#8b87ff; --accent-soft:#20223a; --accent-ink:#b6b3ff;
+    --green:#46d18a; --green-bg:#15271d; --amber:#e0a23c; --amber-bg:#2a2113;
+    --blue:#6ea0ff; --blue-bg:#16223c; --grey:#9aa1ad; --grey-bg:#222732;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    html[data-theme="auto"]{
+      --bg:#0d0f14; --panel:#161922; --ink:#eef1f6; --ink-soft:#c4cad6;
+      --muted:#9aa1ad; --faint:#6b7280; --line:#262b36; --line-soft:#1e222c;
+      --accent:#8b87ff; --accent-soft:#20223a; --accent-ink:#b6b3ff;
+      --green:#46d18a; --green-bg:#15271d; --amber:#e0a23c; --amber-bg:#2a2113;
+      --blue:#6ea0ff; --blue-bg:#16223c; --grey:#9aa1ad; --grey-bg:#222732;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);
+    font:15px/1.5 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:1200px;margin:0 auto;padding:26px 20px 72px}
+  a{color:var(--accent)}
+
+  /* Header */
+  header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}
+  .brand{display:flex;flex-direction:column;gap:3px}
+  .brand .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  h1{font-size:24px;margin:0;letter-spacing:-.4px;font-weight:760}
+  .sub{color:var(--muted);font-size:13px}
+  .top-right{display:flex;align-items:center;gap:10px}
+  .theme-btn{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+    width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:15px;line-height:1;box-shadow:var(--shadow)}
+  .theme-btn:hover{border-color:var(--accent)}
+
+  /* Meta strip */
+  .meta{display:flex;flex-wrap:wrap;gap:9px 16px;align-items:center;
+    margin:0 0 18px;padding:11px 14px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;font-size:12.5px;box-shadow:var(--shadow)}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .dot.ok{background:var(--green)} .dot.stale{background:#d2453a}
+  .meta .sep{color:var(--line)}
+  .src{color:var(--muted)} .src b{color:var(--ink-soft);font-weight:650}
+  .scope-tag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:3px 9px;border-radius:999px}
+  .scope-internal{color:var(--amber);background:var(--amber-bg)}
+  .scope-public{color:var(--green);background:var(--green-bg)}
+
+  /* Period tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px}
+  .tab{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+    padding:8px 15px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.12s;box-shadow:var(--shadow)}
+  .tab:hover{border-color:var(--accent)}
+  .tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tab .k{font-weight:500;opacity:.7;font-size:11.5px;margin-left:5px}
+
+  /* Funnel */
+  .funnel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px 20px;margin-bottom:22px;box-shadow:var(--shadow)}
+  .funnel h2{font-size:14px;margin:0 0 3px;letter-spacing:-.1px}
+  .funnel .cap{color:var(--muted);font-size:12px;margin:0 0 16px}
+  .fstage{display:grid;grid-template-columns:140px 1fr 92px;align-items:center;gap:14px;margin:9px 0}
+  .flabel{font-size:13px;font-weight:600;color:var(--ink-soft);text-align:right}
+  .fbarwrap{background:var(--line-soft);border-radius:9px;height:38px;overflow:hidden;position:relative}
+  .fbar{height:100%;border-radius:9px;display:flex;align-items:center;padding:0 12px;min-width:42px;
+    background:linear-gradient(90deg,var(--accent),#7c75f0);color:#fff;font-weight:700;font-size:15px;
+    transition:width .5s cubic-bezier(.2,.7,.2,1)}
+  .fbar.s1{filter:saturate(1)} .fbar.s2{opacity:.92} .fbar.s3{opacity:.84} .fbar.s4{opacity:.76}
+  .fconv{font-size:12.5px;color:var(--muted)}
+  .fconv b{color:var(--green);font-weight:700}
+  .fconv.low b{color:var(--amber)}
+  @media(max-width:560px){.fstage{grid-template-columns:96px 1fr 64px;gap:9px}.flabel{font-size:12px}}
+
+  /* Sections + cards */
+  section{margin:22px 0}
+  .secthead{display:flex;align-items:baseline;gap:10px;margin:0 2px 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  .secthead h2{font-size:15px;margin:0;letter-spacing:-.1px}
+  section.team .secthead h2{color:var(--accent-ink)}
+  .secthead .owner{color:var(--muted);font-size:12px}
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  @media(max-width:1080px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px 14px 12px;display:flex;flex-direction:column;min-height:130px;box-shadow:var(--shadow);transition:.12s}
+  .card:hover{border-color:var(--line);transform:translateY(-1px)}
+  .card .label{font-size:12px;color:var(--muted);font-weight:650;margin-bottom:9px;line-height:1.3}
+  .card .val{font-size:28px;font-weight:740;letter-spacing:-.6px;line-height:1}
+  .card .val .unit{font-size:12.5px;color:var(--muted);font-weight:600;margin-left:4px;letter-spacing:0}
+  .card.time .val{color:var(--blue)}
+  .card.dim .val{color:var(--faint)}
+  .card .foot{margin-top:auto;padding-top:11px}
+  .badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;padding:3px 7px;border-radius:999px;text-transform:uppercase}
+  .badge.live{color:var(--green);background:var(--green-bg)}
+  .badge.snapshot{color:var(--blue);background:var(--blue-bg)}
+  .badge.proxy{color:var(--amber);background:var(--amber-bg)}
+  .badge.needs_connection,.badge.error{color:var(--grey);background:var(--grey-bg)}
+  .card .source{font-size:10.5px;color:var(--faint);margin-top:7px;line-height:1.35}
+  .card .source .dc{color:var(--faint)}
+  .note{font-size:10.5px;color:var(--faint);margin-top:6px;font-style:italic;line-height:1.35}
+  .cust{margin-top:9px}
+  .cust summary{cursor:pointer;color:var(--accent);font-size:11.5px;font-weight:650;list-style:none;outline:none;user-select:none}
+  .cust summary::-webkit-details-marker{display:none}
+  .cust summary::before{content:"▸ "}
+  .cust[open] summary::before{content:"▾ "}
+  .custlist{margin-top:6px;display:flex;flex-direction:column;max-height:220px;overflow:auto}
+  .custlist span{font-size:11.5px;color:var(--ink-soft);padding:3px 0;border-top:1px solid var(--line-soft)}
+  .custlist span:first-child{border-top:none}
+  footer{margin-top:34px;color:var(--muted);font-size:11.5px;text-align:center;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="eyebrow">Corner Renovation</span>
+      <h1>Growth &amp; Design KPIs</h1>
+      <span class="sub" id="subtitle"></span>
+    </div>
+    <div class="top-right">
+      <button class="theme-btn" id="theme-btn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <div class="meta">
+    <span><span class="dot" id="fresh-dot"></span><b id="fresh-text">loading…</b></span>
+    <span class="sep">|</span>
+    <span class="src">Sources: <b id="src-repo">repo</b> · <b id="src-slack">slack</b> · <b id="src-gmail">gmail</b></span>
+    <span class="scope-tag" id="scope-tag"></span>
+  </div>
+
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div id="funnel"></div>
+  <div id="root"></div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script src="data/data.js"></script>
+<script>
+(function () {
+  var D = window.KPI_DATA, root = document.getElementById("root");
+  if (!D || !D.periods) { root.innerHTML = "<p>No data. Run <code>python3 dashboard/collect.py</code>.</p>"; return; }
+
+  // ---- theme ----
+  var html = document.documentElement, saved = null;
+  try { saved = localStorage.getItem("corner-kpi-theme"); } catch (e) {}
+  if (saved) html.setAttribute("data-theme", saved);
+  document.getElementById("theme-btn").onclick = function () {
+    var cur = html.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    try { localStorage.setItem("corner-kpi-theme", next); } catch (e) {}
+  };
+
+  // ---- meta ----
+  var ageH = (Date.now() - new Date(D.as_of).getTime()) / 3.6e6;
+  var fd = document.getElementById("fresh-dot"), ft = document.getElementById("fresh-text");
+  var fresh = ageH <= (D.refresh_window_hours || 168) + 24;
+  fd.className = "dot " + (fresh ? "ok" : "stale");
+  ft.textContent = (fresh ? "Fresh · updated " : "Stale · updated ") + fmtAge(ageH);
+  setSrc("src-repo", D.sources.repo); setSrc("src-slack", D.sources.slack); setSrc("src-gmail", D.sources.gmail);
+  var isPublic = D.scope === "public";
+  var st = document.getElementById("scope-tag");
+  st.className = "scope-tag " + (isPublic ? "scope-public" : "scope-internal");
+  st.textContent = isPublic ? "Public · aggregate only" : "Internal · includes client names";
+  document.getElementById("footer").innerHTML =
+    "Refreshes Mondays 10:00 (São Paulo). " +
+    (isPublic ? "Aggregate figures only — no client data." :
+      "Internal — drill-downs include client names, keep private.") +
+    "<br>generated " + esc(D.as_of_human);
+
+  // ---- period state ----
+  var state = D.default_period || D.periods[0].key;
+
+  var tabs = document.getElementById("tabs");
+  D.periods.forEach(function (p) {
+    var b = document.createElement("button");
+    b.className = "tab"; b.setAttribute("role", "tab");
+    b.innerHTML = esc(p.label) + (p.kind === "month" ? '<span class="k">month</span>' :
+      '<span class="k">rolling</span>');
+    b.onclick = function () { state = p.key; render(); };
+    b.dataset.key = p.key;
+    tabs.appendChild(b);
+  });
+
+  function period() { return D.periods.filter(function (p) { return p.key === state; })[0] || D.periods[0]; }
+
+  function render() {
+    var p = period();
+    [].forEach.call(tabs.children, function (b) {
+      b.setAttribute("aria-selected", b.dataset.key === state ? "true" : "false");
+    });
+    document.getElementById("subtitle").textContent =
+      p.label + " · " + fmtDate(p.start) + " – " + fmtDate(p.end) +
+      " · activity by event date" + (isPublic ? "" : " · click a metric for the customers");
+    renderFunnel(p);
+    root.innerHTML = "";
+    p.dashboards.forEach(function (dash) {
+      var sec = document.createElement("section");
+      if (dash.id === "team") sec.className = "team";
+      sec.innerHTML = '<div class="secthead"><h2>' + esc(dash.title) +
+        '</h2><span class="owner">' + esc(dash.owner || "") + "</span></div>";
+      var grid = document.createElement("div"); grid.className = "grid";
+      dash.metrics.forEach(function (m) { grid.appendChild(card(m)); });
+      sec.appendChild(grid); root.appendChild(sec);
+    });
+  }
+
+  // ---- funnel ----
+  function renderFunnel(p) {
+    var stages = (p.funnel && p.funnel.stages) || [];
+    var max = Math.max.apply(null, stages.map(function (s) { return s.value; }).concat([1]));
+    var rows = stages.map(function (s, i) {
+      var prev = i > 0 ? stages[i - 1].value : null;
+      var conv = (prev && prev > 0) ? Math.round(s.value / prev * 100) : null;
+      var low = conv !== null && conv < 60;
+      var convHtml = conv === null ? '<span style="color:var(--faint)">— top of funnel</span>'
+        : '<b>' + conv + "%</b> of prev";
+      var w = Math.max(4, Math.round(s.value / max * 100));
+      return '<div class="fstage">' +
+        '<div class="flabel">' + esc(s.label) + "</div>" +
+        '<div class="fbarwrap"><div class="fbar s' + (i + 1) + '" style="width:' + w + '%">' + s.value + "</div></div>" +
+        '<div class="fconv' + (low ? " low" : "") + '">' + convHtml + "</div>" +
+        "</div>";
+    }).join("");
+    document.getElementById("funnel").innerHTML =
+      '<div class="funnel"><h2>Conversion funnel</h2>' +
+      '<p class="cap">Discovery booked → made → proposals → $500 paid · activity in period ' +
+      "(stages can overlap across periods, so a step may exceed the one before).</p>" +
+      rows + "</div>";
+  }
+
+  // ---- card ----
+  function card(m) {
+    var el = document.createElement("div");
+    var kind = m.unit === "days" ? " time" : "";
+    el.className = "card" + kind + (m.value === null || m.value === undefined ? " dim" : "");
+    var second = m.secondary ? '<div class="second">' + esc(m.secondary) + "</div>" : "";
+    var dc = m.double_check ? ' <span class="dc">· check: ' + esc(m.double_check) + "</span>" : "";
+    var note = m.note ? '<div class="note">' + esc(m.note) + "</div>" : "";
+    var cust = (m.customers && m.customers.length)
+      ? '<details class="cust"><summary>' + m.customers.length + " customer" +
+        (m.customers.length > 1 ? "s" : "") + '</summary><div class="custlist">' +
+        m.customers.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") +
+        "</div></details>" : "";
+    el.innerHTML =
+      '<div class="label">' + esc(m.label) + "</div>" +
+      '<div class="val">' + fmtVal(m) + "</div>" + second + cust +
+      '<div class="foot"><span class="badge ' + m.status + '">' + badge(m) + "</span>" +
+      '<div class="source">' + esc(m.source) + dc + "</div>" + note + "</div>";
+    return el;
+  }
+
+  function fmtVal(m) {
+    if (m.value === null || m.value === undefined) return "—";
+    if (m.unit === "$") return "$" + Number(m.value).toLocaleString();
+    if (m.unit === "%") return m.value + '<span class="unit">%</span>';
+    return Number(m.value).toLocaleString() + '<span class="unit">' + esc(m.unit) + "</span>";
+  }
+  function badge(m){ return {live:"Live",proxy:"Proxy",snapshot:"Snapshot",
+      needs_connection:"Not connected",error:"Error"}[m.status] || m.status; }
+  function setSrc(id, s){ var e=document.getElementById(id);
+    e.textContent = e.textContent + " (" + String(s).replace("needs_connection","off") + ")"; }
+  function fmtAge(h){ return h<1?Math.max(1,Math.round(h*60))+"m ago":h<48?Math.round(h)+"h ago":Math.round(h/24)+"d ago"; }
+  function fmtDate(iso){ var d=new Date(iso+"T00:00:00");
+    return d.toLocaleDateString("en-US",{month:"short",day:"numeric"}); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+  render();
+})();
+</script>
+</body>
+</html>
