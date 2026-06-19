@@ -129,6 +129,13 @@
   .card .source{font-size:10.5px;color:var(--faint);margin-top:7px;line-height:1.35}
   .card .source .dc{color:var(--faint)}
   .note{font-size:10.5px;color:var(--faint);margin-top:6px;font-style:italic;line-height:1.35}
+  .srcwrap{margin-top:9px}
+  .srcwrap>summary{list-style:none;cursor:pointer;outline:none;user-select:none;
+    font-size:10.5px;font-weight:700;letter-spacing:.02em;color:var(--muted)}
+  .srcwrap>summary::-webkit-details-marker{display:none}
+  .srcwrap>summary::before{content:"▸ ";color:var(--faint);font-weight:700}
+  .srcwrap[open]>summary::before{content:"▾ "}
+  .srcwrap .source{margin-top:6px}
   .cust{margin-top:9px}
   .cust summary{cursor:pointer;color:var(--accent);font-size:11.5px;font-weight:650;list-style:none;outline:none;user-select:none}
   .cust summary::-webkit-details-marker{display:none}
@@ -282,11 +289,13 @@
         (m.customers.length > 1 ? "s" : "") + '</summary><div class="custlist">' +
         m.customers.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") +
         "</div></details>" : "";
+    var srcBlock = '<details class="srcwrap"><summary>Sources &amp; comments</summary>' +
+      '<div class="source">' + esc(m.source) + dc + "</div>" + note + "</details>";
     el.innerHTML =
       '<div class="label">' + esc(m.label) + "</div>" +
       '<div class="val">' + fmtVal(m) + "</div>" + second + cust +
       '<div class="foot"><span class="badge ' + m.status + '">' + badge(m) + "</span>" +
-      '<div class="source">' + esc(m.source) + dc + "</div>" + note + "</div>";
+      srcBlock + "</div>";
     return el;
   }
 

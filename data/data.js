@@ -1,6 +1,6 @@
 window.KPI_DATA = {
-  "as_of": "2026-06-18T22:32:14+00:00",
-  "as_of_human": "2026-06-18 22:32 UTC",
+  "as_of": "2026-06-19T02:07:16+00:00",
+  "as_of_human": "2026-06-19 02:07 UTC",
   "refresh_window_hours": 168,
   "scope": "internal",
   "sources": {
