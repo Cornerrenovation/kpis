@@ -1,6 +1,6 @@
 window.KPI_DATA = {
-  "as_of": "2026-06-22T23:18:57+00:00",
-  "as_of_human": "2026-06-22 23:18 UTC",
+  "as_of": "2026-06-22T23:43:52+00:00",
+  "as_of_human": "2026-06-22 23:43 UTC",
   "refresh_window_hours": 168,
   "scope": "internal",
   "sources": {
@@ -73,13 +73,16 @@ window.KPI_DATA = {
           {
             "key": "proposal",
             "label": "Proposals made",
-            "value": 11,
+            "value": 14,
             "customers": [
               "Alizeh Banonisar",
               "Caitlin Patton",
+              "Claudia Sanchez",
               "Colby Brown",
               "Elizabeth Grave",
+              "Jade Kim",
               "Jorge Calvano",
+              "Kenny Lin",
               "Marilyn White",
               "Michael Kramer",
               "Moon Mehta",
@@ -172,7 +175,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 11,
+              "value": 14,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
@@ -184,10 +187,13 @@ window.KPI_DATA = {
                 "Moon Mehta",
                 "Rachel OConnor",
                 "Shayna Moos",
+                "Jade Kim",
                 "Virginia Ferreira",
                 "Caitlin Patton",
+                "Claudia Sanchez",
                 "Colby Brown",
-                "Elizabeth Grave"
+                "Elizabeth Grave",
+                "Kenny Lin"
               ],
               "double_check": "Customer email thread",
               "note": null,
@@ -281,7 +287,9 @@ window.KPI_DATA = {
                 "Caitlin Patton \u2014 4d",
                 "Colby Brown \u2014 7d",
                 "Elizabeth Grave \u2014 11d",
+                "Jade Kim \u2014 8d",
                 "Jorge Calvano \u2014 7d",
+                "Kenny Lin \u2014 7d",
                 "Marilyn White \u2014 12d",
                 "Michael Kramer \u2014 5d",
                 "Moon Mehta \u2014 7d",
@@ -290,7 +298,7 @@ window.KPI_DATA = {
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
-              "note": "avg over 11 proposal(s) in window",
+              "note": "avg over 13 proposal(s) in window",
               "secondary": null
             },
             {
@@ -661,11 +669,12 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 1,
+              "value": 2,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
               "customers": [
+                "Jade Kim",
                 "Virginia Ferreira"
               ],
               "double_check": "Customer email thread",
@@ -729,15 +738,16 @@ window.KPI_DATA = {
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 30,
+              "value": 19,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
               "customers": [
+                "Jade Kim \u2014 8d",
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
-              "note": "avg over 1 proposal(s) in window",
+              "note": "avg over 2 proposal(s) in window",
               "secondary": null
             },
             {
@@ -805,14 +815,16 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 3,
+              "value": 5,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
               "customers": [
                 "Caitlin Patton",
+                "Claudia Sanchez",
                 "Colby Brown",
-                "Elizabeth Grave"
+                "Elizabeth Grave",
+                "Kenny Lin"
               ],
               "double_check": "Customer email thread",
               "note": null,
@@ -884,10 +896,11 @@ window.KPI_DATA = {
               "customers": [
                 "Caitlin Patton \u2014 4d",
                 "Colby Brown \u2014 7d",
-                "Elizabeth Grave \u2014 11d"
+                "Elizabeth Grave \u2014 11d",
+                "Kenny Lin \u2014 7d"
               ],
               "double_check": null,
-              "note": "avg over 3 proposal(s) in window",
+              "note": "avg over 4 proposal(s) in window",
               "secondary": null
             },
             {
@@ -1895,12 +1908,15 @@ window.KPI_DATA = {
           {
             "key": "proposal",
             "label": "Proposals made",
-            "value": 9,
+            "value": 12,
             "customers": [
               "Alizeh Banonisar",
               "Caitlin Patton",
+              "Claudia Sanchez",
               "Colby Brown",
+              "Jade Kim",
               "Jorge Calvano",
+              "Kenny Lin",
               "Marilyn White",
               "Michael Kramer",
               "Moon Mehta",
@@ -1985,7 +2001,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 9,
+              "value": 12,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
@@ -1996,9 +2012,12 @@ window.KPI_DATA = {
                 "Michael Kramer",
                 "Moon Mehta",
                 "Rachel OConnor",
+                "Jade Kim",
                 "Virginia Ferreira",
                 "Caitlin Patton",
-                "Colby Brown"
+                "Claudia Sanchez",
+                "Colby Brown",
+                "Kenny Lin"
               ],
               "double_check": "Customer email thread",
               "note": null,
@@ -2078,7 +2097,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 12,
+              "value": 11,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
@@ -2086,7 +2105,9 @@ window.KPI_DATA = {
                 "Alizeh Banonisar \u2014 21d",
                 "Caitlin Patton \u2014 4d",
                 "Colby Brown \u2014 7d",
+                "Jade Kim \u2014 8d",
                 "Jorge Calvano \u2014 7d",
+                "Kenny Lin \u2014 7d",
                 "Marilyn White \u2014 12d",
                 "Michael Kramer \u2014 5d",
                 "Moon Mehta \u2014 7d",
@@ -2094,7 +2115,7 @@ window.KPI_DATA = {
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
-              "note": "avg over 9 proposal(s) in window",
+              "note": "avg over 11 proposal(s) in window",
               "secondary": null
             },
             {
@@ -2453,11 +2474,12 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 1,
+              "value": 2,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
               "customers": [
+                "Jade Kim",
                 "Virginia Ferreira"
               ],
               "double_check": "Customer email thread",
@@ -2519,15 +2541,16 @@ window.KPI_DATA = {
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 30,
+              "value": 19,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
               "customers": [
+                "Jade Kim \u2014 8d",
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
-              "note": "avg over 1 proposal(s) in window",
+              "note": "avg over 2 proposal(s) in window",
               "secondary": null
             },
             {
@@ -2592,13 +2615,15 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 2,
+              "value": 4,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
               "customers": [
                 "Caitlin Patton",
-                "Colby Brown"
+                "Claudia Sanchez",
+                "Colby Brown",
+                "Kenny Lin"
               ],
               "double_check": "Customer email thread",
               "note": null,
@@ -2668,10 +2693,11 @@ window.KPI_DATA = {
               "status": "live",
               "customers": [
                 "Caitlin Patton \u2014 4d",
-                "Colby Brown \u2014 7d"
+                "Colby Brown \u2014 7d",
+                "Kenny Lin \u2014 7d"
               ],
               "double_check": null,
-              "note": "avg over 2 proposal(s) in window",
+              "note": "avg over 3 proposal(s) in window",
               "secondary": null
             },
             {
