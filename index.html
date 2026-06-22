@@ -363,7 +363,7 @@
       return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 
   // ===== KPIs tab =====
-  var KPI = {avg:43050, c5:0.2415, c10:0.90, securedDesigner:56250, goalStart:"2026-07"};
+  var KPI = {avg:43050, c5:0.2415, c10:0.90, bookToConduct:0.95, conductToProp:0.70, securedDesigner:56250, goalStart:"2026-07"};
   var DES = [["agustina","Agustina"],["suelen","Suelen"],["bruna","Bruna"],["lais","Laís"]];
   var STAGES = [
     ["booked","Discoveries booked","Discovery booked"],
@@ -374,7 +374,9 @@
   ];
   function kpiTargets(n){
     var secured=KPI.securedDesigner*n, tenpct=secured/KPI.avg, deposits=tenpct/KPI.c10, proposals=deposits/KPI.c5;
-    return {booked:proposals,conducted:proposals,proposals:proposals,deposits:deposits,tenpct:tenpct,secured:secured,conv:KPI.c5*100};
+    var conducted=proposals/KPI.conductToProp, booked=conducted/KPI.bookToConduct;
+    return {booked:booked,conducted:conducted,proposals:proposals,deposits:deposits,tenpct:tenpct,secured:secured,
+            conv:KPI.c5*100, b2c:KPI.bookToConduct*100, c2p:KPI.conductToProp*100};
   }
   function mval(dash,prefix){ if(!dash) return 0;
     for(var i=0;i<dash.metrics.length;i++){ if(dash.metrics[i].label.indexOf(prefix)===0) return dash.metrics[i].value||0; } return 0; }
@@ -435,6 +437,10 @@
     STAGES.forEach(function(s){ var tg=T[s[0]],ac=A[s[0]],v=ac-tg,p=tg?Math.round(ac/tg*100):0;
       h+='<tr><td>'+esc(s[1])+'</td><td>'+r1(tg)+'</td><td>'+ac+'</td><td class="'+(v<0?"neg":"pos")+'">'+(v>=0?"+":"")+r1(v)+'</td><td class="'+pcl(p)+'">'+p+'%</td></tr>';
       chart.push([s[1],p]); });
+    var b2c=A.booked?r1(A.conducted/A.booked*100):0, b2cp=Math.round(b2c/T.b2c*100);
+    h+='<tr class="rate"><td>Booked → conducted</td><td>'+T.b2c.toFixed(0)+'%</td><td>'+b2c+'%</td><td class="'+((b2c-T.b2c)<0?"neg":"pos")+'">'+((b2c-T.b2c)>=0?"+":"")+r1(b2c-T.b2c)+'</td><td class="'+pcl(b2cp)+'">'+b2cp+'%</td></tr>';
+    var c2p=A.conducted?r1(A.proposals/A.conducted*100):0, c2pp=Math.round(c2p/T.c2p*100);
+    h+='<tr class="rate"><td>Conducted → proposals</td><td>'+T.c2p.toFixed(0)+'%</td><td>'+c2p+'%</td><td class="'+((c2p-T.c2p)<0?"neg":"pos")+'">'+((c2p-T.c2p)>=0?"+":"")+r1(c2p-T.c2p)+'</td><td class="'+pcl(c2pp)+'">'+c2pp+'%</td></tr>';
     var cv=A.proposals?r1(A.deposits/A.proposals*100):0, cvp=Math.round(cv/T.conv*100);
     h+='<tr class="rate"><td>Proposal → $500 conversion</td><td>'+T.conv.toFixed(2)+'%</td><td>'+cv+'%</td><td class="'+((cv-T.conv)<0?"neg":"pos")+'">'+((cv-T.conv)>=0?"+":"")+r1(cv-T.conv)+'</td><td class="'+pcl(cvp)+'">'+cvp+'%</td></tr>';
     var sA=A.tenpct*KPI.avg, sP=Math.round(sA/T.secured*100), sv=sA-T.secured;
