@@ -375,7 +375,8 @@
   function kpiTargets(n){
     var secured=KPI.securedDesigner*n, tenpct=secured/KPI.avg, deposits=tenpct/KPI.c10, proposals=deposits/KPI.c5;
     var conducted=proposals/KPI.conductToProp, booked=conducted/KPI.bookToConduct;
-    return {booked:booked,conducted:conducted,proposals:proposals,deposits:deposits,tenpct:tenpct,secured:secured,
+    return {booked:Math.round(booked),conducted:Math.round(conducted),proposals:Math.round(proposals),
+            deposits:Math.round(deposits),tenpct:Math.round(tenpct),secured:secured,
             conv:KPI.c5*100, b2c:KPI.bookToConduct*100, c2p:KPI.conductToProp*100};
   }
   function mval(dash,prefix){ if(!dash) return 0;
