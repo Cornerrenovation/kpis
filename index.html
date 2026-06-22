@@ -145,6 +145,41 @@
   .custlist span{font-size:11.5px;color:var(--ink-soft);padding:3px 0;border-top:1px solid var(--line-soft)}
   .custlist span:first-child{border-top:none}
   footer{margin-top:34px;color:var(--muted);font-size:11.5px;text-align:center;line-height:1.6}
+
+  /* Mode tabs + KPIs view */
+  .modetabs{display:inline-flex;background:var(--line-soft);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;margin:0 0 18px}
+  .modetab{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13.5px;font-weight:650;padding:7px 22px;border-radius:999px;cursor:pointer;transition:.12s}
+  .modetab[aria-selected="true"]{background:var(--accent);color:#fff}
+  .kpi-hero{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:12px}
+  .kh-top{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);font-weight:650}
+  .kh-pct{font-weight:700}
+  .kpi-hero.g .kh-pct{color:var(--green)}.kpi-hero.a .kh-pct{color:var(--amber)}.kpi-hero.r .kh-pct{color:#d2453a}
+  .kh-num{font-size:34px;font-weight:760;letter-spacing:-.8px;margin:6px 0 10px}
+  .kh-num span{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:0}
+  .kh-sub{font-size:11.5px;color:var(--faint);margin-top:8px}
+  .ktrack{height:10px;background:var(--line-soft);border-radius:999px;overflow:hidden}
+  .ktrack.sm{height:7px;margin-top:8px}
+  .kfill{height:100%;border-radius:999px;transition:width .5s}
+  .kfill.g{background:var(--green)}.kfill.a{background:var(--amber)}.kfill.r{background:#d2453a}
+  .kpi-grid .card{min-height:auto}
+  .kc-sub{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .kpitable{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:13.5px}
+  .kpitable th,.kpitable td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line-soft)}
+  .kpitable th:first-child,.kpitable td:first-child{text-align:left}
+  .kpitable th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;background:var(--line-soft)}
+  .kpitable tbody tr:last-child td{border-bottom:0}
+  .kpitable td.g{color:var(--green);font-weight:700}.kpitable td.a{color:var(--amber);font-weight:700}.kpitable td.r{color:#d2453a;font-weight:700}
+  .kpitable td.neg{color:#d2453a}.kpitable td.pos{color:var(--green)}
+  .kpitable tr.rate td{color:var(--muted);font-style:italic}
+  .kpitable tr.kpi-row td{font-weight:750;background:var(--accent-soft);border-top:1px solid var(--line)}
+  .prog{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+  .prow{display:grid;grid-template-columns:150px 1fr 52px;align-items:center;gap:12px;margin:8px 0}
+  .plabel{font-size:12.5px;color:var(--ink-soft);font-weight:600;text-align:right}
+  .ptrack{height:24px;background:var(--line-soft);border-radius:7px;overflow:hidden}
+  .pfill{height:100%;border-radius:7px;min-width:2px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+  .pfill.g{background:linear-gradient(90deg,var(--green),#3fbf7a)}.pfill.a{background:linear-gradient(90deg,var(--amber),#e0a23c)}.pfill.r{background:linear-gradient(90deg,#d2453a,#e0685f)}
+  .ppct{font-size:12.5px;font-weight:700;color:var(--ink-soft)}
+  @media(max-width:560px){.prow{grid-template-columns:88px 1fr 44px}.kpitable{font-size:12px}.kpitable th,.kpitable td{padding:8px}}
 </style>
 </head>
 <body>
@@ -167,9 +202,21 @@
     <span class="scope-tag" id="scope-tag"></span>
   </div>
 
-  <div class="tabs" id="tabs" role="tablist"></div>
-  <div id="funnel"></div>
-  <div id="root"></div>
+  <div class="modetabs" id="modetabs" role="tablist">
+    <button class="modetab" data-mode="metrics" role="tab">Metrics</button>
+    <button class="modetab" data-mode="kpis" role="tab">KPIs</button>
+  </div>
+
+  <div id="metrics-view">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div id="funnel"></div>
+    <div id="root"></div>
+  </div>
+
+  <div id="kpis-view" hidden>
+    <div class="tabs" id="kpi-months" role="tablist"></div>
+    <div id="kpi-body"></div>
+  </div>
 
   <footer id="footer"></footer>
 </div>
@@ -315,7 +362,109 @@
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){
       return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 
-  render();
+  // ===== KPIs tab =====
+  var KPI = {avg:43050, c5:0.2415, c10:0.90, securedDesigner:56250, goalStart:"2026-07"};
+  var DES = [["agustina","Agustina"],["suelen","Suelen"],["bruna","Bruna"],["lais","Laís"]];
+  var STAGES = [
+    ["booked","Discoveries booked","Discovery booked"],
+    ["conducted","Discoveries conducted","Discovery calls conducted"],
+    ["proposals","Proposals conducted","Proposal calls conducted"],
+    ["deposits","$500 deposits","$500 deposits"],
+    ["tenpct","Projects to 10%","10% payments"]
+  ];
+  function kpiTargets(n){
+    var secured=KPI.securedDesigner*n, tenpct=secured/KPI.avg, deposits=tenpct/KPI.c10, proposals=deposits/KPI.c5;
+    return {booked:proposals,conducted:proposals,proposals:proposals,deposits:deposits,tenpct:tenpct,secured:secured,conv:KPI.c5*100};
+  }
+  function mval(dash,prefix){ if(!dash) return 0;
+    for(var i=0;i<dash.metrics.length;i++){ if(dash.metrics[i].label.indexOf(prefix)===0) return dash.metrics[i].value||0; } return 0; }
+  function pcl(p){ return p>=80?"g":(p>=50?"a":"r"); }
+  function r1(v){ return Math.round(v*10)/10; }
+
+  var monthPeriods = D.periods.filter(function(p){return p.kind==="month";});
+  var monthKeys = monthPeriods.map(function(p){return p.key;});
+  if(monthKeys.indexOf(KPI.goalStart)<0) monthKeys.push(KPI.goalStart);
+  monthKeys.sort();
+  function mPeriod(k){ return monthPeriods.filter(function(x){return x.key===k;})[0]||null; }
+  function mLabel(k){ var p=mPeriod(k); if(p) return p.label;
+    var a=k.split("-"); return new Date(a[0],a[1]-1,1).toLocaleDateString("en-US",{month:"short",year:"numeric"}); }
+  function eActuals(per,eid){ var d=per?per.dashboards.filter(function(x){return x.id===eid;})[0]:null;
+    var a={}; STAGES.forEach(function(s){ a[s[0]]=mval(d,s[2]); }); return a; }
+
+  var kpiMonth = monthKeys.indexOf("2026-06")>=0?"2026-06":monthKeys[monthKeys.length-1];
+  var kpiEntity = "team";
+
+  function renderKpi(){
+    var mt=document.getElementById("kpi-months"); mt.innerHTML="";
+    monthKeys.forEach(function(k){
+      var b=document.createElement("button"); b.className="tab";
+      b.innerHTML=esc(mLabel(k))+'<span class="k">'+(k>=KPI.goalStart?"goal":"baseline")+'</span>';
+      b.setAttribute("aria-selected", k===kpiMonth?"true":"false");
+      b.onclick=function(){ kpiMonth=k; renderKpi(); };
+      mt.appendChild(b);
+    });
+    var per=mPeriod(kpiMonth), goalMonth=kpiMonth>=KPI.goalStart;
+    var ents=[["team","Team"]].concat(DES);
+    var entName=ents.filter(function(e){return e[0]===kpiEntity;})[0][1];
+
+    // A · secured value (team hero + designer cards)
+    var tT=kpiTargets(4), tA=eActuals(per,"team");
+    var tSec=tA.tenpct*KPI.avg, tP=Math.round(tSec/tT.secured*100);
+    var h='<section><div class="secthead"><h2>Monthly Secured Value · '+esc(mLabel(kpiMonth))+'</h2>'+
+      '<span class="owner">'+(goalMonth?"goal month":"baseline — goal from July")+'</span></div>'+
+      '<div class="kpi-hero '+pcl(tP)+'"><div class="kh-top"><span>Team</span><span class="kh-pct">'+tP+'% to goal</span></div>'+
+      '<div class="kh-num">$'+Math.round(tSec).toLocaleString()+'<span> / $'+tT.secured.toLocaleString()+' target</span></div>'+
+      '<div class="ktrack"><div class="kfill '+pcl(tP)+'" style="width:'+Math.min(100,tP)+'%"></div></div>'+
+      '<div class="kh-sub">'+tA.tenpct+' projects to 10% (target '+r1(tT.tenpct)+') · actual value = 10% count × $'+KPI.avg.toLocaleString()+' avg check</div></div>'+
+      '<div class="grid kpi-grid">';
+    DES.forEach(function(d){ var t=kpiTargets(1), a=eActuals(per,d[0]); var s=a.tenpct*KPI.avg, p=Math.round(s/t.secured*100);
+      h+='<div class="card"><div class="label">'+esc(d[1])+'</div><div class="val">$'+Math.round(s).toLocaleString()+'</div>'+
+        '<div class="kc-sub">/ $'+t.secured.toLocaleString()+' · '+p+'%</div>'+
+        '<div class="ktrack sm"><div class="kfill '+pcl(p)+'" style="width:'+Math.min(100,p)+'%"></div></div></div>'; });
+    h+='</div></section>';
+
+    // entity selector
+    h+='<div class="tabs" id="kpi-ent" role="tablist">';
+    ents.forEach(function(e){ h+='<button class="tab" data-e="'+e[0]+'" aria-selected="'+(e[0]===kpiEntity?"true":"false")+'">'+esc(e[1])+'</button>'; });
+    h+='</div>';
+
+    // B · funnel table
+    var n=kpiEntity==="team"?4:1, T=kpiTargets(n), A=eActuals(per,kpiEntity), chart=[];
+    h+='<section><div class="secthead"><h2>Funnel to the KPI · '+esc(entName)+'</h2><span class="owner">target → actual → % to goal</span></div>'+
+      '<table class="kpitable"><thead><tr><th>Stage</th><th>Target</th><th>Actual</th><th>Variance</th><th>% to goal</th></tr></thead><tbody>';
+    STAGES.forEach(function(s){ var tg=T[s[0]],ac=A[s[0]],v=ac-tg,p=tg?Math.round(ac/tg*100):0;
+      h+='<tr><td>'+esc(s[1])+'</td><td>'+r1(tg)+'</td><td>'+ac+'</td><td class="'+(v<0?"neg":"pos")+'">'+(v>=0?"+":"")+r1(v)+'</td><td class="'+pcl(p)+'">'+p+'%</td></tr>';
+      chart.push([s[1],p]); });
+    var cv=A.proposals?r1(A.deposits/A.proposals*100):0, cvp=Math.round(cv/T.conv*100);
+    h+='<tr class="rate"><td>Proposal → $500 conversion</td><td>'+T.conv.toFixed(2)+'%</td><td>'+cv+'%</td><td class="'+((cv-T.conv)<0?"neg":"pos")+'">'+((cv-T.conv)>=0?"+":"")+r1(cv-T.conv)+'</td><td class="'+pcl(cvp)+'">'+cvp+'%</td></tr>';
+    var sA=A.tenpct*KPI.avg, sP=Math.round(sA/T.secured*100), sv=sA-T.secured;
+    h+='<tr class="kpi-row"><td>Monthly Secured Value</td><td>$'+T.secured.toLocaleString()+'</td><td>$'+Math.round(sA).toLocaleString()+'</td><td class="'+(sv<0?"neg":"pos")+'">'+(sv>=0?"+":"")+'$'+Math.round(sv).toLocaleString()+'</td><td class="'+pcl(sP)+'">'+sP+'%</td></tr>';
+    h+='</tbody></table></section>';
+    chart.push(["Secured value",sP]);
+
+    // C · progress chart
+    h+='<section><div class="secthead"><h2>Progress to goal · '+esc(entName)+'</h2><span class="owner">% of monthly target</span></div><div class="prog">';
+    chart.forEach(function(r){ h+='<div class="prow"><div class="plabel">'+esc(r[0])+'</div>'+
+      '<div class="ptrack"><div class="pfill '+pcl(r[1])+'" style="width:'+Math.min(100,r[1])+'%"></div></div>'+
+      '<div class="ppct">'+r[1]+'%</div></div>'; });
+    h+='</div></section>';
+
+    document.getElementById("kpi-body").innerHTML=h;
+    [].forEach.call(document.querySelectorAll("#kpi-ent button"), function(b){ b.onclick=function(){ kpiEntity=b.dataset.e; renderKpi(); }; });
+  }
+
+  // ---- mode tabs ----
+  var modeEls=document.querySelectorAll(".modetab");
+  function setMode(m){
+    [].forEach.call(modeEls,function(b){ b.setAttribute("aria-selected", b.dataset.mode===m?"true":"false"); });
+    document.getElementById("metrics-view").hidden=(m!=="metrics");
+    document.getElementById("kpis-view").hidden=(m!=="kpis");
+    if(m==="metrics"){ document.getElementById("subtitle").style.display=""; render(); }
+    else { document.getElementById("subtitle").style.display="none"; renderKpi(); }
+  }
+  [].forEach.call(modeEls,function(b){ b.onclick=function(){ setMode(b.dataset.mode); }; });
+
+  setMode("metrics");
 })();
 </script>
 </body>
