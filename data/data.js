@@ -1,6 +1,6 @@
 window.KPI_DATA = {
-  "as_of": "2026-06-22T23:53:30+00:00",
-  "as_of_human": "2026-06-22 23:53 UTC",
+  "as_of": "2026-06-30T20:22:36+00:00",
+  "as_of_human": "2026-06-30 20:22 UTC",
   "refresh_window_hours": 168,
   "scope": "internal",
   "sources": {
@@ -14,16 +14,15 @@ window.KPI_DATA = {
       "key": "rolling",
       "label": "Last 30 days",
       "kind": "rolling",
-      "start": "2026-05-23",
-      "end": "2026-06-22",
+      "start": "2026-05-31",
+      "end": "2026-06-30",
       "funnel": {
         "stages": [
           {
             "key": "booked",
             "label": "Discovery booked",
-            "value": 20,
+            "value": 22,
             "customers": [
-              "Aaron Abney",
               "Alex Nelson",
               "Anna Ewa Ringwelski-Hannan",
               "Bianca Ker",
@@ -32,23 +31,26 @@ window.KPI_DATA = {
               "Colby Brown",
               "Damon Gambuto",
               "Daniela Castano Vargas",
+              "Dean Jutilla",
               "Ella Boyd-Wong",
               "Emily Armistead",
               "Jade Kim",
               "Joanne Wu",
               "Jorge Calvano",
-              "Kenny Lin",
+              "Laurie King",
+              "Maria Desanzo",
               "Marilyn White",
               "Michael Kramer",
               "Sabina Hasani",
               "Sahar Parsa",
-              "Sean"
+              "Stephanie Ichinose",
+              "Sulinh Lafontaine-Campisi"
             ]
           },
           {
             "key": "discovery",
             "label": "Discovery made",
-            "value": 18,
+            "value": 19,
             "customers": [
               "Alex Nelson",
               "Ania Ringwelski Hannan",
@@ -58,28 +60,28 @@ window.KPI_DATA = {
               "Colby Brown",
               "Damon Gambuto",
               "Daniela Castano Vargas",
+              "Dean Jutilla",
               "Emily Armistead",
               "Jade Kim",
               "Jorge Calvano",
-              "Kenny Lin",
+              "Lauren Nikaci",
               "Marilyn White",
               "Michael Kramer",
               "Moon Mehta",
-              "Nique Anne Buya",
               "Sabina Hasani",
+              "Stephanie I",
               "katie sanders"
             ]
           },
           {
             "key": "proposal",
             "label": "Proposals made",
-            "value": 14,
+            "value": 12,
             "customers": [
               "Alizeh Banonisar",
               "Caitlin Patton",
               "Claudia Sanchez",
               "Colby Brown",
-              "Elizabeth Grave",
               "Jade Kim",
               "Jorge Calvano",
               "Kenny Lin",
@@ -87,20 +89,17 @@ window.KPI_DATA = {
               "Michael Kramer",
               "Moon Mehta",
               "Rachel OConnor",
-              "Shayna Moos",
               "Virginia Ferreira"
             ]
           },
           {
             "key": "deposit",
             "label": "$500 paid",
-            "value": 5,
+            "value": 3,
             "customers": [
               "Alex Bush",
               "Ellina Lapina",
-              "Mary Sapountzakis",
-              "Ryan Lenox",
-              "Sarah-Bruce Wisnom"
+              "Mary Sapountzakis"
             ]
           }
         ]
@@ -113,7 +112,7 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 20,
+              "value": 22,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
@@ -121,9 +120,9 @@ window.KPI_DATA = {
                 "Anna Ewa Ringwelski-Hannan",
                 "Ciara Tang",
                 "Jorge Calvano",
-                "Aaron Abney",
                 "Damon Gambuto",
                 "Emily Armistead",
+                "Laurie King",
                 "Marilyn White",
                 "Michael Kramer",
                 "Sabina Hasani",
@@ -132,20 +131,22 @@ window.KPI_DATA = {
                 "Daniela Castano Vargas",
                 "Ella Boyd-Wong",
                 "Jade Kim",
+                "Maria Desanzo",
                 "Bianca Ker",
                 "Caitlin Patton",
                 "Colby Brown",
+                "Dean Jutilla",
                 "Joanne Wu",
-                "Kenny Lin",
-                "Sean"
+                "Stephanie Ichinose",
+                "Sulinh Lafontaine-Campisi"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 18,
+              "value": 19,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
@@ -159,15 +160,16 @@ window.KPI_DATA = {
                 "Marilyn White",
                 "Michael Kramer",
                 "Moon Mehta",
-                "Nique Anne Buya",
                 "Sabina Hasani",
                 "Alex Nelson",
                 "Daniela Castano Vargas",
                 "Jade Kim",
+                "Lauren Nikaci",
                 "Caitlin Patton",
                 "Clau Sanchez",
                 "Colby Brown",
-                "Kenny Lin"
+                "Dean Jutilla",
+                "Stephanie I"
               ],
               "double_check": null,
               "note": null,
@@ -175,7 +177,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 14,
+              "value": 12,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
@@ -186,13 +188,11 @@ window.KPI_DATA = {
                 "Michael Kramer",
                 "Moon Mehta",
                 "Rachel OConnor",
-                "Shayna Moos",
                 "Jade Kim",
                 "Virginia Ferreira",
                 "Caitlin Patton",
                 "Claudia Sanchez",
                 "Colby Brown",
-                "Elizabeth Grave",
                 "Kenny Lin"
               ],
               "double_check": "Customer email thread",
@@ -201,7 +201,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Design sessions conducted",
-              "value": 15,
+              "value": 16,
               "unit": "sessions",
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
@@ -209,38 +209,37 @@ window.KPI_DATA = {
                 "Mary Sapountzakis \u2014 2026-06-11",
                 "Ryan Lenox \u2014 2026-06-15",
                 "Mary Sapountzakis \u2014 2026-06-16",
+                "Mary Sapountzakis \u2014 2026-06-24",
+                "Mary Sapountzakis \u2014 2026-06-30",
                 "Sarah-Bruce Wisnom \u2014 2026-06-05",
                 "Sarah-Bruce Wisnom \u2014 2026-06-11",
-                "Val Nara \u2014 2026-05-28",
-                "Asma Husain \u2014 2026-05-29",
                 "Val Nara \u2014 2026-06-03",
                 "Asma Husain \u2014 2026-06-05",
                 "Shiva Mendez \u2014 2026-06-10",
                 "Val Nara \u2014 2026-06-11",
-                "Alex Bush \u2014 2026-05-27",
+                "Val Nara \u2014 2026-06-24",
+                "Shiva Mendez \u2014 2026-06-29",
                 "Gloria Feurra \u2014 2026-06-02",
                 "Ellina Lapina \u2014 2026-06-10",
                 "Ellina Lapina \u2014 2026-06-12"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
               "label": "$500 deposits",
-              "value": 5,
+              "value": 3,
               "unit": "deposits",
               "source": "Designer Gmail (payment date) \u00b7 current owner",
               "status": "live",
               "customers": [
                 "Mary Sapountzakis",
-                "Ryan Lenox",
-                "Sarah-Bruce Wisnom",
                 "Alex Bush",
                 "Ellina Lapina"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -253,7 +252,7 @@ window.KPI_DATA = {
                 "Gloria Feurra"
               ],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -273,12 +272,12 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 11,
+              "value": 12,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
@@ -286,35 +285,31 @@ window.KPI_DATA = {
                 "Alizeh Banonisar \u2014 21d",
                 "Caitlin Patton \u2014 4d",
                 "Colby Brown \u2014 7d",
-                "Elizabeth Grave \u2014 11d",
-                "Jade Kim \u2014 8d",
+                "Jade Kim \u2014 17d",
                 "Jorge Calvano \u2014 7d",
                 "Kenny Lin \u2014 7d",
                 "Marilyn White \u2014 12d",
                 "Michael Kramer \u2014 5d",
                 "Moon Mehta \u2014 7d",
                 "Rachel OConnor \u2014 11d",
-                "Shayna Moos \u2014 8d",
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
-              "note": "avg over 13 proposal(s) in window",
+              "note": "avg over 11 proposal(s) in window",
               "secondary": null
             },
             {
               "label": "Avg proposal \u2192 $500",
-              "value": 31,
+              "value": 17,
               "unit": "days",
               "source": "Repo proposal date \u2192 deposit date",
               "status": "live",
               "customers": [
                 "Alex Bush \u2014 13d",
-                "Mary Sapountzakis \u2014 21d",
-                "Ryan Lenox \u2014 43d",
-                "Sarah-Bruce Wisnom \u2014 46d"
+                "Mary Sapountzakis \u2014 21d"
               ],
               "double_check": null,
-              "note": "avg over 4 deposit(s) in window",
+              "note": "avg over 2 deposit(s) in window",
               "secondary": null
             },
             {
@@ -349,7 +344,7 @@ window.KPI_DATA = {
                 "Jorge Calvano"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -383,31 +378,32 @@ window.KPI_DATA = {
             },
             {
               "label": "Design sessions conducted",
-              "value": 3,
+              "value": 5,
               "unit": "sessions",
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
               "customers": [
                 "Mary Sapountzakis \u2014 2026-06-11",
                 "Ryan Lenox \u2014 2026-06-15",
-                "Mary Sapountzakis \u2014 2026-06-16"
+                "Mary Sapountzakis \u2014 2026-06-16",
+                "Mary Sapountzakis \u2014 2026-06-24",
+                "Mary Sapountzakis \u2014 2026-06-30"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
               "label": "$500 deposits",
-              "value": 2,
+              "value": 1,
               "unit": "deposits",
               "source": "Designer Gmail (payment date) \u00b7 current owner",
               "status": "live",
               "customers": [
-                "Mary Sapountzakis",
-                "Ryan Lenox"
+                "Mary Sapountzakis"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -418,7 +414,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -432,7 +428,7 @@ window.KPI_DATA = {
                 "Ryan Lenox"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -450,16 +446,15 @@ window.KPI_DATA = {
             },
             {
               "label": "Avg proposal \u2192 $500",
-              "value": 32,
+              "value": 21,
               "unit": "days",
               "source": "Repo proposal date \u2192 deposit date",
               "status": "live",
               "customers": [
-                "Mary Sapountzakis \u2014 21d",
-                "Ryan Lenox \u2014 43d"
+                "Mary Sapountzakis \u2014 21d"
               ],
               "double_check": null,
-              "note": "avg over 2 deposit(s) in window",
+              "note": "avg over 1 deposit(s) in window",
               "secondary": null
             },
             {
@@ -487,21 +482,21 @@ window.KPI_DATA = {
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
               "customers": [
-                "Aaron Abney",
                 "Damon Gambuto",
                 "Emily Armistead",
+                "Laurie King",
                 "Marilyn White",
                 "Michael Kramer",
                 "Sabina Hasani",
                 "Sahar Parsa"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 7,
+              "value": 6,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
@@ -511,7 +506,6 @@ window.KPI_DATA = {
                 "Marilyn White",
                 "Michael Kramer",
                 "Moon Mehta",
-                "Nique Anne Buya",
                 "Sabina Hasani"
               ],
               "double_check": null,
@@ -520,7 +514,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 6,
+              "value": 5,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
@@ -529,8 +523,7 @@ window.KPI_DATA = {
                 "Marilyn White",
                 "Michael Kramer",
                 "Moon Mehta",
-                "Rachel OConnor",
-                "Shayna Moos"
+                "Rachel OConnor"
               ],
               "double_check": "Customer email thread",
               "note": null,
@@ -547,20 +540,18 @@ window.KPI_DATA = {
                 "Sarah-Bruce Wisnom \u2014 2026-06-11"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
               "label": "$500 deposits",
-              "value": 1,
+              "value": 0,
               "unit": "deposits",
               "source": "Designer Gmail (payment date) \u00b7 current owner",
               "status": "live",
-              "customers": [
-                "Sarah-Bruce Wisnom"
-              ],
+              "customers": [],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -571,7 +562,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -584,7 +575,7 @@ window.KPI_DATA = {
                 "Sarah-Bruce Wisnom"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -598,24 +589,21 @@ window.KPI_DATA = {
                 "Marilyn White \u2014 12d",
                 "Michael Kramer \u2014 5d",
                 "Moon Mehta \u2014 7d",
-                "Rachel OConnor \u2014 11d",
-                "Shayna Moos \u2014 8d"
+                "Rachel OConnor \u2014 11d"
               ],
               "double_check": null,
-              "note": "avg over 6 proposal(s) in window",
+              "note": "avg over 5 proposal(s) in window",
               "secondary": null
             },
             {
               "label": "Avg proposal \u2192 $500",
-              "value": 46,
+              "value": null,
               "unit": "days",
               "source": "Repo proposal date \u2192 deposit date",
               "status": "live",
-              "customers": [
-                "Sarah-Bruce Wisnom \u2014 46d"
-              ],
+              "customers": [],
               "double_check": null,
-              "note": "avg over 1 deposit(s) in window",
+              "note": "no deposits in window",
               "secondary": null
             },
             {
@@ -638,7 +626,7 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 4,
+              "value": 5,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
@@ -646,22 +634,24 @@ window.KPI_DATA = {
                 "Alex Nelson",
                 "Daniela Castano Vargas",
                 "Ella Boyd-Wong",
-                "Jade Kim"
+                "Jade Kim",
+                "Maria Desanzo"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 3,
+              "value": 4,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
               "customers": [
                 "Alex Nelson",
                 "Daniela Castano Vargas",
-                "Jade Kim"
+                "Jade Kim",
+                "Lauren Nikaci"
               ],
               "double_check": null,
               "note": null,
@@ -688,15 +678,15 @@ window.KPI_DATA = {
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
               "customers": [
-                "Val Nara \u2014 2026-05-28",
-                "Asma Husain \u2014 2026-05-29",
                 "Val Nara \u2014 2026-06-03",
                 "Asma Husain \u2014 2026-06-05",
                 "Shiva Mendez \u2014 2026-06-10",
-                "Val Nara \u2014 2026-06-11"
+                "Val Nara \u2014 2026-06-11",
+                "Val Nara \u2014 2026-06-24",
+                "Shiva Mendez \u2014 2026-06-29"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -707,7 +697,7 @@ window.KPI_DATA = {
               "status": "live",
               "customers": [],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -718,7 +708,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -733,17 +723,17 @@ window.KPI_DATA = {
                 "Val Nara"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 19,
+              "value": 24,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
               "customers": [
-                "Jade Kim \u2014 8d",
+                "Jade Kim \u2014 17d",
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
@@ -781,7 +771,7 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 6,
+              "value": 7,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
@@ -789,17 +779,18 @@ window.KPI_DATA = {
                 "Bianca Ker",
                 "Caitlin Patton",
                 "Colby Brown",
+                "Dean Jutilla",
                 "Joanne Wu",
-                "Kenny Lin",
-                "Sean"
+                "Stephanie Ichinose",
+                "Sulinh Lafontaine-Campisi"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 4,
+              "value": 5,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
@@ -807,7 +798,8 @@ window.KPI_DATA = {
                 "Caitlin Patton",
                 "Clau Sanchez",
                 "Colby Brown",
-                "Kenny Lin"
+                "Dean Jutilla",
+                "Stephanie I"
               ],
               "double_check": null,
               "note": null,
@@ -815,7 +807,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Proposal calls conducted",
-              "value": 5,
+              "value": 4,
               "unit": "calls",
               "source": "Proposal-call recordings (repo), by call date",
               "status": "live",
@@ -823,7 +815,6 @@ window.KPI_DATA = {
                 "Caitlin Patton",
                 "Claudia Sanchez",
                 "Colby Brown",
-                "Elizabeth Grave",
                 "Kenny Lin"
               ],
               "double_check": "Customer email thread",
@@ -832,18 +823,17 @@ window.KPI_DATA = {
             },
             {
               "label": "Design sessions conducted",
-              "value": 4,
+              "value": 3,
               "unit": "sessions",
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
               "customers": [
-                "Alex Bush \u2014 2026-05-27",
                 "Gloria Feurra \u2014 2026-06-02",
                 "Ellina Lapina \u2014 2026-06-10",
                 "Ellina Lapina \u2014 2026-06-12"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -857,7 +847,7 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -870,7 +860,7 @@ window.KPI_DATA = {
                 "Gloria Feurra"
               ],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -884,23 +874,22 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 7,
+              "value": 6,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
               "customers": [
                 "Caitlin Patton \u2014 4d",
                 "Colby Brown \u2014 7d",
-                "Elizabeth Grave \u2014 11d",
                 "Kenny Lin \u2014 7d"
               ],
               "double_check": null,
-              "note": "avg over 4 proposal(s) in window",
+              "note": "avg over 3 proposal(s) in window",
               "secondary": null
             },
             {
@@ -1064,7 +1053,7 @@ window.KPI_DATA = {
                 "Sean"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -1145,7 +1134,7 @@ window.KPI_DATA = {
                 "Alex Bush \u2014 2026-05-27"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -1160,7 +1149,7 @@ window.KPI_DATA = {
                 "Val Nara"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -1171,7 +1160,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -1191,7 +1180,7 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -1275,7 +1264,7 @@ window.KPI_DATA = {
                 "Will Yeung"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -1322,7 +1311,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -1335,7 +1324,7 @@ window.KPI_DATA = {
                 "Ryan Lenox"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -1346,7 +1335,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -1360,7 +1349,7 @@ window.KPI_DATA = {
                 "Ryan Lenox"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -1423,7 +1412,7 @@ window.KPI_DATA = {
                 "Shayna Moos"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -1467,7 +1456,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -1480,7 +1469,7 @@ window.KPI_DATA = {
                 "Sarah-Bruce Wisnom"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -1491,7 +1480,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -1504,7 +1493,7 @@ window.KPI_DATA = {
                 "Sarah-Bruce Wisnom"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -1566,7 +1555,7 @@ window.KPI_DATA = {
                 "Virginia Ferreira"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -1614,7 +1603,7 @@ window.KPI_DATA = {
                 "Asma Husain \u2014 2026-05-29"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -1627,7 +1616,7 @@ window.KPI_DATA = {
                 "Val Nara"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -1638,7 +1627,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -1653,7 +1642,7 @@ window.KPI_DATA = {
                 "Val Nara"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -1720,7 +1709,7 @@ window.KPI_DATA = {
                 "Sean"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -1768,7 +1757,7 @@ window.KPI_DATA = {
                 "Alex Bush \u2014 2026-05-27"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -1779,7 +1768,7 @@ window.KPI_DATA = {
               "status": "live",
               "customers": [],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -1790,7 +1779,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -1804,7 +1793,7 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -1855,13 +1844,13 @@ window.KPI_DATA = {
       "label": "Jun 2026",
       "kind": "month",
       "start": "2026-06-01",
-      "end": "2026-06-22",
+      "end": "2026-06-30",
       "funnel": {
         "stages": [
           {
             "key": "booked",
             "label": "Discovery booked",
-            "value": 17,
+            "value": 22,
             "customers": [
               "Alex Nelson",
               "Anna Ewa Ringwelski-Hannan",
@@ -1871,21 +1860,26 @@ window.KPI_DATA = {
               "Colby Brown",
               "Damon Gambuto",
               "Daniela Castano Vargas",
+              "Dean Jutilla",
               "Ella Boyd-Wong",
               "Emily Armistead",
               "Jade Kim",
               "Joanne Wu",
               "Jorge Calvano",
+              "Laurie King",
+              "Maria Desanzo",
               "Marilyn White",
               "Michael Kramer",
               "Sabina Hasani",
-              "Sahar Parsa"
+              "Sahar Parsa",
+              "Stephanie Ichinose",
+              "Sulinh Lafontaine-Campisi"
             ]
           },
           {
             "key": "discovery",
             "label": "Discovery made",
-            "value": 16,
+            "value": 19,
             "customers": [
               "Alex Nelson",
               "Ania Ringwelski Hannan",
@@ -1895,13 +1889,16 @@ window.KPI_DATA = {
               "Colby Brown",
               "Damon Gambuto",
               "Daniela Castano Vargas",
+              "Dean Jutilla",
               "Emily Armistead",
               "Jade Kim",
               "Jorge Calvano",
+              "Lauren Nikaci",
               "Marilyn White",
               "Michael Kramer",
               "Moon Mehta",
               "Sabina Hasani",
+              "Stephanie I",
               "katie sanders"
             ]
           },
@@ -1944,7 +1941,7 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 17,
+              "value": 22,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
@@ -1954,6 +1951,7 @@ window.KPI_DATA = {
                 "Jorge Calvano",
                 "Damon Gambuto",
                 "Emily Armistead",
+                "Laurie King",
                 "Marilyn White",
                 "Michael Kramer",
                 "Sabina Hasani",
@@ -1962,18 +1960,22 @@ window.KPI_DATA = {
                 "Daniela Castano Vargas",
                 "Ella Boyd-Wong",
                 "Jade Kim",
+                "Maria Desanzo",
                 "Bianca Ker",
                 "Caitlin Patton",
                 "Colby Brown",
-                "Joanne Wu"
+                "Dean Jutilla",
+                "Joanne Wu",
+                "Stephanie Ichinose",
+                "Sulinh Lafontaine-Campisi"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 16,
+              "value": 19,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
@@ -1991,9 +1993,12 @@ window.KPI_DATA = {
                 "Alex Nelson",
                 "Daniela Castano Vargas",
                 "Jade Kim",
+                "Lauren Nikaci",
                 "Caitlin Patton",
                 "Clau Sanchez",
-                "Colby Brown"
+                "Colby Brown",
+                "Dean Jutilla",
+                "Stephanie I"
               ],
               "double_check": null,
               "note": null,
@@ -2025,7 +2030,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Design sessions conducted",
-              "value": 12,
+              "value": 16,
               "unit": "sessions",
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
@@ -2033,18 +2038,22 @@ window.KPI_DATA = {
                 "Mary Sapountzakis \u2014 2026-06-11",
                 "Ryan Lenox \u2014 2026-06-15",
                 "Mary Sapountzakis \u2014 2026-06-16",
+                "Mary Sapountzakis \u2014 2026-06-24",
+                "Mary Sapountzakis \u2014 2026-06-30",
                 "Sarah-Bruce Wisnom \u2014 2026-06-05",
                 "Sarah-Bruce Wisnom \u2014 2026-06-11",
                 "Val Nara \u2014 2026-06-03",
                 "Asma Husain \u2014 2026-06-05",
                 "Shiva Mendez \u2014 2026-06-10",
                 "Val Nara \u2014 2026-06-11",
+                "Val Nara \u2014 2026-06-24",
+                "Shiva Mendez \u2014 2026-06-29",
                 "Gloria Feurra \u2014 2026-06-02",
                 "Ellina Lapina \u2014 2026-06-10",
                 "Ellina Lapina \u2014 2026-06-12"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -2059,7 +2068,7 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -2072,7 +2081,7 @@ window.KPI_DATA = {
                 "Gloria Feurra"
               ],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -2092,12 +2101,12 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 11,
+              "value": 12,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
@@ -2105,7 +2114,7 @@ window.KPI_DATA = {
                 "Alizeh Banonisar \u2014 21d",
                 "Caitlin Patton \u2014 4d",
                 "Colby Brown \u2014 7d",
-                "Jade Kim \u2014 8d",
+                "Jade Kim \u2014 17d",
                 "Jorge Calvano \u2014 7d",
                 "Kenny Lin \u2014 7d",
                 "Marilyn White \u2014 12d",
@@ -2164,7 +2173,7 @@ window.KPI_DATA = {
                 "Jorge Calvano"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -2198,17 +2207,19 @@ window.KPI_DATA = {
             },
             {
               "label": "Design sessions conducted",
-              "value": 3,
+              "value": 5,
               "unit": "sessions",
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
               "customers": [
                 "Mary Sapountzakis \u2014 2026-06-11",
                 "Ryan Lenox \u2014 2026-06-15",
-                "Mary Sapountzakis \u2014 2026-06-16"
+                "Mary Sapountzakis \u2014 2026-06-16",
+                "Mary Sapountzakis \u2014 2026-06-24",
+                "Mary Sapountzakis \u2014 2026-06-30"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -2221,7 +2232,7 @@ window.KPI_DATA = {
                 "Mary Sapountzakis"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -2232,7 +2243,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -2246,7 +2257,7 @@ window.KPI_DATA = {
                 "Ryan Lenox"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -2295,20 +2306,21 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 6,
+              "value": 7,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
               "customers": [
                 "Damon Gambuto",
                 "Emily Armistead",
+                "Laurie King",
                 "Marilyn White",
                 "Michael Kramer",
                 "Sabina Hasani",
                 "Sahar Parsa"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
@@ -2357,7 +2369,7 @@ window.KPI_DATA = {
                 "Sarah-Bruce Wisnom \u2014 2026-06-11"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -2368,7 +2380,7 @@ window.KPI_DATA = {
               "status": "live",
               "customers": [],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -2379,7 +2391,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -2392,7 +2404,7 @@ window.KPI_DATA = {
                 "Sarah-Bruce Wisnom"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
@@ -2443,7 +2455,7 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 4,
+              "value": 5,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
@@ -2451,22 +2463,24 @@ window.KPI_DATA = {
                 "Alex Nelson",
                 "Daniela Castano Vargas",
                 "Ella Boyd-Wong",
-                "Jade Kim"
+                "Jade Kim",
+                "Maria Desanzo"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 3,
+              "value": 4,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
               "customers": [
                 "Alex Nelson",
                 "Daniela Castano Vargas",
-                "Jade Kim"
+                "Jade Kim",
+                "Lauren Nikaci"
               ],
               "double_check": null,
               "note": null,
@@ -2488,7 +2502,7 @@ window.KPI_DATA = {
             },
             {
               "label": "Design sessions conducted",
-              "value": 4,
+              "value": 6,
               "unit": "sessions",
               "source": "Fathom \u00b7 paid + designer-owned clients (by meeting date)",
               "status": "snapshot",
@@ -2496,10 +2510,12 @@ window.KPI_DATA = {
                 "Val Nara \u2014 2026-06-03",
                 "Asma Husain \u2014 2026-06-05",
                 "Shiva Mendez \u2014 2026-06-10",
-                "Val Nara \u2014 2026-06-11"
+                "Val Nara \u2014 2026-06-11",
+                "Val Nara \u2014 2026-06-24",
+                "Shiva Mendez \u2014 2026-06-29"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -2510,7 +2526,7 @@ window.KPI_DATA = {
               "status": "live",
               "customers": [],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -2521,7 +2537,7 @@ window.KPI_DATA = {
               "status": "snapshot",
               "customers": [],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -2536,17 +2552,17 @@ window.KPI_DATA = {
                 "Val Nara"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
               "label": "Avg discovery \u2192 proposal",
-              "value": 19,
+              "value": 24,
               "unit": "days",
               "source": "Repo transcript dates \u00b7 discovery \u2192 proposal",
               "status": "live",
               "customers": [
-                "Jade Kim \u2014 8d",
+                "Jade Kim \u2014 17d",
                 "Virginia Ferreira \u2014 30d"
               ],
               "double_check": null,
@@ -2584,7 +2600,7 @@ window.KPI_DATA = {
           "metrics": [
             {
               "label": "Discovery booked",
-              "value": 4,
+              "value": 7,
               "unit": "leads",
               "source": "Slack #new-lead-workflow (Assignee, booking date)",
               "status": "live",
@@ -2592,22 +2608,27 @@ window.KPI_DATA = {
                 "Bianca Ker",
                 "Caitlin Patton",
                 "Colby Brown",
-                "Joanne Wu"
+                "Dean Jutilla",
+                "Joanne Wu",
+                "Stephanie Ichinose",
+                "Sulinh Lafontaine-Campisi"
               ],
               "double_check": null,
-              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded.",
+              "note": "Booked by Assignee at booking time. Kostya-assigned bookings (e.g. Asma, Lauren, Charles, Moon Mehta, Lauren Nikaci) are excluded per the existing rule even when later reassigned to a designer. Trade Program rows (Katie Woodhull, Nique Anne Buya/student) excluded. Jun 23\u201330 added: Maria Desanzo (Bruna), Stephanie/Dean/Sulinh (La\u00eds), Laurie King (Suelen).",
               "secondary": null
             },
             {
               "label": "Discovery calls conducted",
-              "value": 3,
+              "value": 5,
               "unit": "calls",
               "source": "First-call recordings (repo), by call date",
               "status": "live",
               "customers": [
                 "Caitlin Patton",
                 "Clau Sanchez",
-                "Colby Brown"
+                "Colby Brown",
+                "Dean Jutilla",
+                "Stephanie I"
               ],
               "double_check": null,
               "note": null,
@@ -2641,7 +2662,7 @@ window.KPI_DATA = {
                 "Ellina Lapina \u2014 2026-06-12"
               ],
               "double_check": null,
-              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. No new design sessions Jun 17\u201322: Jade Kim/Virginia Ferreira (Bruna) = proposal; Alex Nelson/Ciara Tang/Sahar/Emily Armistead = discovery; Colby Brown/Caitlin Patton (La\u00eds) = proposal.",
+              "note": "Post-$500 design working sessions, by meeting date, current owner (calendar+Fathom). Proposal-stage meetings NOT counted. Jun 23\u201330 added: Mary (Agustina Jun 24 'finalize design direction' + Jun 30 Design Session), Val + Shiva (Bruna Jun 24/29 'finalize design'). Excluded Jun 23\u201330: Stephanie (La\u00eds) = discovery/follow-up; Gloria (La\u00eds) = build/technical (paid 10% Jun 15); Katie/Woodhull = trade.",
               "secondary": null
             },
             {
@@ -2655,7 +2676,7 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": "Stripe",
-              "note": "In-window $500s (May 23\u2013Jun 22): Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22 (just outside window, borderline); Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. No new deposits detected Jun 17\u201322. Melanie Stambaugh confirmed lost (refund processed Jun 18). Dates approximate \u2014 confirm in Stripe.",
+              "note": "In-window $500s: Mary Sapountzakis ~Jun 11; Ryan Lenox ~May 30; Sarah-Bruce Wisnom ~May 25; Val Nara ~May 22; Alex Bush ~Jun 1; Ellina Lapina ~Jun 5. NO new $500 deposits detected Jun 17\u201330 (all designer-mail hits were build-phase logistics; Michael Kramer still deciding, not paid). Melanie Stambaugh confirmed lost (refund Jun 18). Dates approximate \u2014 confirm in Stripe.",
               "secondary": null
             },
             {
@@ -2668,7 +2689,7 @@ window.KPI_DATA = {
                 "Gloria Feurra"
               ],
               "double_check": "Stripe",
-              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. No new 10% payments detected Jun 17\u201322. Backfill older 10% payments on the next weekly run for an exact #6/#9/#10.",
+              "note": "Gloria Feurra: 10% project payment Jun 15, deposit was May 6 (40 days) \u2014 owner La\u00eds. NO new 10% payments detected Jun 17\u201330 (Yorgo's Jun 29 invoice = build-phase production balance, not a funnel 10%). Backfill older 10% payments for an exact #6/#9/#10.",
               "secondary": null
             },
             {
@@ -2682,7 +2703,7 @@ window.KPI_DATA = {
                 "Ellina Lapina"
               ],
               "double_check": null,
-              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No changes Jun 17\u201322: Melanie Stambaugh confirmed lost (refund, was already excluded). Gloria Feurra already graduated to 10% on Jun 15.",
+              "note": "Active in design (paid $500, pre-10%) by current owner. Derived from post-$500 design activity; exact $500 dates pending Stripe. No roster changes Jun 17\u201330 (no new $500s, no new 10%): all 8 still in design. Gloria Feurra graduated to 10% Jun 15 (auto-removed).",
               "secondary": null
             },
             {
