@@ -103,6 +103,23 @@
   .status{font-weight:760}
   .status.ok{color:var(--green)} .status.watch{color:var(--amber)} .status.risk{color:var(--red)} .status.muted{color:var(--grey)}
   .note{font-size:12px;color:var(--faint);margin-top:8px}
+  .timeline-list{display:flex;flex-direction:column;gap:10px}
+  .timeline-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .timeline-item summary{list-style:none;display:grid;grid-template-columns:1.1fr 1.4fr .7fr .9fr 1.4fr;gap:12px;align-items:center;padding:13px 15px;cursor:pointer}
+  .timeline-item summary::-webkit-details-marker{display:none}
+  .timeline-item summary:before{content:"+";width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:var(--line-soft);color:var(--ink-soft);font-weight:780}
+  .timeline-item[open] summary:before{content:"-";background:var(--accent-soft);color:var(--accent-ink)}
+  .timeline-head{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:760;background:var(--line-soft);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr 1.4fr .7fr .9fr 1.4fr;gap:12px;padding:9px 15px}
+  .client-name{font-size:15px;font-weight:760;color:var(--ink)}
+  .timeline-summary{font-size:12.5px;color:var(--ink-soft)}
+  .timeline-mini{font-size:12px;color:var(--muted)}
+  .timeline-detail{padding:0 14px 14px}
+  .timeline-detail table{box-shadow:none}
+  @media(max-width:760px){
+    .timeline-head{display:none}
+    .timeline-item summary{grid-template-columns:1fr;gap:5px}
+    .timeline-item summary:before{grid-row:1;justify-self:start}
+  }
   .view[hidden]{display:none}
 </style>
 </head>
@@ -243,43 +260,142 @@
       <div class="grid three">
         <div class="card"><div class="label">Current measurable projects</div><div class="val">4<span class="unit">of 8</span></div><div class="desc">Jenn, Callie, Maggie, and Helena have enough tracker evidence for stage-duration baseline.</div><div class="foot"><span class="badge watch">Baseline</span></div></div>
         <div class="card"><div class="label">Target data coverage</div><div class="val">100<span class="unit">%</span></div><div class="desc">Every post-10 project should have planned dates, actual dates, and delay reason by stage.</div><div class="foot"><span class="badge info">Setup KPI</span></div></div>
-        <div class="card"><div class="label">Improvement metric</div><div class="val">Delay<span class="unit">days</span></div><div class="desc">Track avoidable delay days and whether the client was protected from surprises.</div><div class="foot"><span class="badge ok">Trend</span></div></div>
+        <div class="card"><div class="label">Airtable delay</div><div class="val">4<span class="unit">forecast days</span></div><div class="desc">Callie Ground delivery: Airtable planned EndDate Jul 5; latest logistics email ETA Jul 9.</div><div class="foot"><span class="badge watch">Airtable + email</span></div></div>
       </div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Stage Timeframes</h2><span class="owner">actual time spent in each visible stage from tracker data</span></div>
-      <table>
-        <thead><tr><th>Project</th><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
-        <tbody>
-          <tr><td>Asma</td><td>Samples</td><td>PM intro Jun 15</td><td>Samples tracking Jun 30</td><td class="num">15</td><td>Two sample batches logged: Ukraine and Chicago.</td></tr>
-          <tr><td>Gloria</td><td>Samples</td><td>PM intro May 13</td><td>Samples tracking Jun 4</td><td class="num">22</td><td>No newer tracker evidence; confirm status in Airtable.</td></tr>
-          <tr><td>Jenn</td><td>Production planning</td><td>PM intro May 8</td><td>Production launch May 26</td><td class="num">18</td><td>Client concerned about long timeline; organizer confirmation noted.</td></tr>
-          <tr><td>Jenn</td><td>Manufacturing / pre-assembly</td><td>Production launch May 26</td><td>Pre-assembly photos Jun 26</td><td class="num">31</td><td>Next stage should be packaging/shipping update.</td></tr>
-          <tr><td>Callie</td><td>Production planning</td><td>PM intro Mar 23</td><td>Timeline email Mar 25</td><td class="num">2</td><td>Fast kickoff after PM handoff.</td></tr>
-          <tr><td>Callie</td><td>Pre-assembly to cargo pick-up</td><td>Pre-assembly Apr 22</td><td>Cargo picked up May 4</td><td class="num">12</td><td>Air vs ocean freight and installation options discussed.</td></tr>
-          <tr><td>Callie</td><td>Shipping / customs</td><td>Cargo picked up May 4</td><td>Cargo in US Jun 18</td><td class="num">45</td><td>Multiple timeline updates and tracking links were logged.</td></tr>
-          <tr><td>Callie</td><td>Installation prep</td><td>Cargo in US Jun 18</td><td>Assembly instructions Jun 29</td><td class="num">11</td><td>Follow installation start around Jul 1.</td></tr>
-          <tr><td>Maggie</td><td>Production planning</td><td>PM intro Mar 27</td><td>Timeline email Mar 30</td><td class="num">3</td><td>Fast kickoff after PM handoff.</td></tr>
-          <tr><td>Maggie</td><td>Pre-assembly to cargo pick-up</td><td>Pre-assembly Apr 17</td><td>Cargo picked up Apr 24</td><td class="num">7</td><td>Good stage movement in tracker.</td></tr>
-          <tr><td>Maggie</td><td>Shipping / customs</td><td>Cargo picked up Apr 24</td><td>Cargo in US Jun 1</td><td class="num">38</td><td>Address confirmation and ground delivery coordination followed.</td></tr>
-          <tr><td>Maggie</td><td>Post-delivery / install support</td><td>Delivery scheduling Jun 5</td><td>Post-delivery call Jun 19</td><td class="num">14</td><td>Weekly support call was offered; next check-in needs confirmation.</td></tr>
-          <tr><td>Helena</td><td>Shipping / customs</td><td>Shipping tracking Apr 14</td><td>Cargo in US May 18</td><td class="num">34</td><td>Timeline changes logged repeatedly before US arrival.</td></tr>
-          <tr><td>Helena</td><td>Ground delivery planning</td><td>Cargo ready May 22-Jun 1</td><td>Delivery planning Jun 24</td><td class="num">23</td><td>Delivery, unloading, installation and GC/Borys call coordination.</td></tr>
-          <tr><td>Helena</td><td>Post-delivery / pre-install</td><td>Delivery planning Jun 24</td><td>Pre-install call Jun 29</td><td class="num">5</td><td>Assembly expected next week; next update should be logged.</td></tr>
-        </tbody>
-      </table>
+      <div class="secthead"><h2>Client Timelines</h2><span class="owner">one row per client; open to see stage details</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">Samples median</div><div class="val">18.5<span class="unit">days</span></div><div class="desc">2.6 weeks median from PM intro to latest samples tracking. Based on Asma and Gloria.</div><div class="foot"><span class="badge info">Samples</span></div></div>
+        <div class="card"><div class="label">Production median</div><div class="val">14<span class="unit">days</span></div><div class="desc">2.0 weeks median from production kickoff/planning to pre-assembly or cargo pick-up. Based on Jenn, Callie, Maggie.</div><div class="foot"><span class="badge info">Production</span></div></div>
+        <div class="card"><div class="label">Delivery median</div><div class="val">56<span class="unit">days</span></div><div class="desc">8.0 weeks median from cargo pick-up/shipping to delivery, installation prep, or pre-install support. Based on Callie, Maggie, Helena.</div><div class="foot"><span class="badge info">Delivery</span></div></div>
+      </div>
+      <div class="note">Stage medians use the tracker baseline available today. They should be recalculated from Airtable once planned and actual stage dates are complete for every project.</div>
+      <div class="timeline-list">
+        <div class="timeline-head"><span>Client</span><span>Timeline covered</span><span>Tracked time</span><span>Latest stage</span><span>Watch item</span></div>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Asma</span>
+            <span class="timeline-summary">PM intro Jun 15 -> samples tracking Jun 30</span>
+            <span class="timeline-mini">15 days = 2.1 weeks</span>
+            <span class="timeline-mini">Samples</span>
+            <span class="timeline-mini">Two sample batches logged.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Samples</td><td>PM intro Jun 15</td><td>Samples tracking Jun 30</td><td class="num">15</td><td>Two sample batches logged: Ukraine and Chicago.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Gloria</span>
+            <span class="timeline-summary">PM intro May 13 -> samples tracking Jun 4</span>
+            <span class="timeline-mini">22 days = 3.1 weeks</span>
+            <span class="timeline-mini">Samples</span>
+            <span class="timeline-mini">Confirm current Airtable status.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Samples</td><td>PM intro May 13</td><td>Samples tracking Jun 4</td><td class="num">22</td><td>No newer tracker evidence; confirm status in Airtable.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item" open>
+          <summary>
+            <span class="client-name">Jenn</span>
+            <span class="timeline-summary">PM intro May 8 -> pre-assembly photos Jun 26</span>
+            <span class="timeline-mini">49 days = 7.0 weeks</span>
+            <span class="timeline-mini">Manufacturing / pre-assembly</span>
+            <span class="timeline-mini">Next update should be packaging/shipping.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Production planning</td><td>PM intro May 8</td><td>Production launch May 26</td><td class="num">18</td><td>Client concerned about long timeline; organizer confirmation noted.</td></tr>
+                <tr><td>Manufacturing / pre-assembly</td><td>Production launch May 26</td><td>Pre-assembly photos Jun 26</td><td class="num">31</td><td>Next stage should be packaging/shipping update.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Callie</span>
+            <span class="timeline-summary">PM intro Mar 23 -> latest delivery ETA Jul 9</span>
+            <span class="timeline-mini">108 days = 15.4 weeks</span>
+            <span class="timeline-mini">Ground delivery</span>
+            <span class="timeline-mini">Forecast +4 days vs Airtable planned EndDate.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Production planning</td><td>PM intro Mar 23</td><td>Timeline email Mar 25</td><td class="num">2</td><td>Fast kickoff after PM handoff.</td></tr>
+                <tr><td>Pre-assembly to cargo pick-up</td><td>Pre-assembly Apr 22</td><td>Cargo picked up May 4</td><td class="num">12</td><td>Air vs ocean freight and installation options discussed.</td></tr>
+                <tr><td>Shipping / customs</td><td>Airtable planned May 14-Jun 17</td><td>Email fact: container arrived Dallas Jun 25</td><td class="num">42</td><td>Actual shipping/customs end was +8 days vs Airtable planned EndDate.</td></tr>
+                <tr><td>Ground delivery</td><td>Airtable planned Jun 17-Jul 5</td><td>Email fact: pickup succeeded Jul 1; latest ETA Jul 9</td><td class="num">22</td><td>Forecast delivery is +4 days vs Airtable planned EndDate. Reason: LTL carrier availability / pickup delays.</td></tr>
+                <tr><td>Installation prep</td><td>Assembly instructions Jun 29</td><td>Waiting on delivery ETA Jul 9</td><td class="num">-</td><td>Post-install NPS should be asked after delivery and installation are complete.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Maggie</span>
+            <span class="timeline-summary">PM intro Mar 27 -> post-delivery call Jun 19</span>
+            <span class="timeline-mini">62 days = 8.8 weeks</span>
+            <span class="timeline-mini">Post-delivery / install support</span>
+            <span class="timeline-mini">Confirm weekly support follow-up.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Production planning</td><td>PM intro Mar 27</td><td>Timeline email Mar 30</td><td class="num">3</td><td>Fast kickoff after PM handoff.</td></tr>
+                <tr><td>Pre-assembly to cargo pick-up</td><td>Pre-assembly Apr 17</td><td>Cargo picked up Apr 24</td><td class="num">7</td><td>Good stage movement in tracker.</td></tr>
+                <tr><td>Shipping / customs</td><td>Cargo picked up Apr 24</td><td>Cargo in US Jun 1</td><td class="num">38</td><td>Address confirmation and ground delivery coordination followed.</td></tr>
+                <tr><td>Post-delivery / install support</td><td>Delivery scheduling Jun 5</td><td>Post-delivery call Jun 19</td><td class="num">14</td><td>Weekly support call was offered; next check-in needs confirmation.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Helena</span>
+            <span class="timeline-summary">Shipping tracking Apr 14 -> pre-install call Jun 29</span>
+            <span class="timeline-mini">62 days = 8.8 weeks</span>
+            <span class="timeline-mini">Post-delivery / pre-install</span>
+            <span class="timeline-mini">Log next installation progress touch.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Shipping / customs</td><td>Shipping tracking Apr 14</td><td>Cargo in US May 18</td><td class="num">34</td><td>Timeline changes logged repeatedly before US arrival.</td></tr>
+                <tr><td>Ground delivery planning</td><td>Cargo ready May 22-Jun 1</td><td>Delivery planning Jun 24</td><td class="num">23</td><td>Delivery, unloading, installation and GC/Borys call coordination.</td></tr>
+                <tr><td>Post-delivery / pre-install</td><td>Delivery planning Jun 24</td><td>Pre-install call Jun 29</td><td class="num">5</td><td>Assembly expected next week; next update should be logged.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
       <div class="note">This is the starting baseline, not the final KPI calculation. Airtable timeline records should become the source of truth once planned and actual stage dates are complete.</div>
     </section>
 
-    <section>
-      <div class="secthead"><h2>Fields To Add</h2><span class="owner">needed for clean planned vs actual reporting</span></div>
-      <div class="grid three">
-        <div class="card"><div class="label">Planned vs actual</div><div class="val">4<span class="unit">dates</span></div><div class="desc">Planned start/end and actual start/end per stage or substage.</div><div class="foot"><span class="badge info">Schema</span></div></div>
-        <div class="card"><div class="label">Delay reason</div><div class="val">1<span class="unit">owner</span></div><div class="desc">Manufacturer, logistics, client, internal, customs, installer, or other.</div><div class="foot"><span class="badge info">Schema</span></div></div>
-        <div class="card"><div class="label">Client protected?</div><div class="val">Y/N</div><div class="desc">Was the client updated before the date changed or before they had to ask?</div><div class="foot"><span class="badge info">Connects KPI 1</span></div></div>
-      </div>
-    </section>
   </main>
 
   <main id="nps" class="view" hidden>
