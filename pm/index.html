@@ -112,122 +112,141 @@
     <div class="brand">
       <span class="eyebrow">Corner Renovation</span>
       <h1>Project Manager KPI</h1>
-      <span class="sub">Manager . proactive client updates after 10% payment . tracker snapshot as of Jul 1, 2026</span>
+      <span class="sub">Manager . client connection through process . NPS start . timeline improvement</span>
     </div>
     <button class="theme-btn" id="theme-btn" title="Toggle theme" aria-label="Toggle theme">O</button>
   </header>
 
   <div class="meta">
-    <span><span class="dot"></span><b>Fresh . tracker read Jul 1, 2026</b></span>
+    <span><span class="dot"></span><b>Reviewed . process doc + tracker/Airtable baseline</b></span>
     <span class="sep">|</span>
-    <span class="src">Sources: <b>PM tracker</b> . <b>Airtable connected</b> . <b>Gmail/Gemini audit sampled</b></span>
+    <span class="src">Sources: <b>PM Process Guide</b> . <b>PM tracker</b> . <b>Airtable connected</b></span>
     <span class="scope-tag">Internal . client names visible</span>
   </div>
 
   <div class="tabs" role="tablist">
     <button class="tab" data-view="dashboard" aria-selected="true">Dashboard</button>
-    <button class="tab" data-view="projects">Projects</button>
-    <button class="tab" data-view="timeframes">Timeframes</button>
-    <button class="tab" data-view="nps">NPS & Calls</button>
+    <button class="tab" data-view="process">Process</button>
+    <button class="tab" data-view="nps">NPS</button>
+    <button class="tab" data-view="timeline">Timeline</button>
   </div>
 
   <main id="dashboard" class="view">
     <section>
       <div class="hero">
         <div class="hero-top">
-          <span>Headline KPI . post-10% proactive update cadence</span>
+          <span>KPI 1 . client connection through the process</span>
           <span>Target: 90%+</span>
         </div>
-        <div class="hero-num">75<span>% . 3 of 4 tracker-verified post-10 projects on cadence</span></div>
+        <div class="hero-num">75<span>% . 3 of 4 tracker-verified post-10 projects connected on cadence</span></div>
         <div class="track"><div class="fill"></div></div>
-        <div class="hero-sub">Measures how often the manager proactively reaches out after the client paid 10% / moved into production. Airtable shows 8 manager-owned active post-10 projects; 4 currently have tracker communication dates.</div>
+        <div class="hero-sub">Measures whether the manager completes the required client touchpoints from the process guide after 10% payment: production timeline, milestone emails, shipping/delivery calls, installation support, and post-install closeout.</div>
       </div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Counted Projects</h2><span class="owner">tracker-verified cadence denominator</span></div>
-      <table>
-        <thead><tr><th>Project</th><th>Last proactive update</th><th class="num">Days since</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>Jenn</td><td>Pre-assembly photos shared, Jun 26</td><td class="num">5</td><td class="status ok">On cadence</td></tr>
-          <tr><td>Callie</td><td>Assembly instructions shared, Jun 29</td><td class="num">2</td><td class="status ok">On cadence</td></tr>
-          <tr><td>Maggie</td><td>Post-delivery/install support call, Jun 19</td><td class="num">12</td><td class="status watch">Review</td></tr>
-          <tr><td>Helena</td><td>Pre-installation call, Jun 29</td><td class="num">2</td><td class="status ok">On cadence</td></tr>
-        </tbody>
-      </table>
-      <div class="note">These are the four projects currently counted in the 75% headline because they have communication dates in the PM tracker. Airtable shows four more manager-owned post-10 projects that need last-update dates connected.</div>
+      <div class="secthead"><h2>Three KPI System</h2><span class="owner">what the manager owns weekly</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">1. Process connection</div><div class="val">75<span class="unit">%</span></div><div class="desc">Client received the right proactive update for the current stage before needing to ask.</div><div class="foot"><span class="badge watch">Weekly KPI</span></div></div>
+        <div class="card"><div class="label">2. NPS capture</div><div class="val">0<span class="unit">%</span></div><div class="desc">Not tracked yet. Start with post-delivery, post-install, and reclamation-resolution calls.</div><div class="foot"><span class="badge risk">Start now</span></div></div>
+        <div class="card"><div class="label">3. Timeline visibility</div><div class="val">4<span class="unit">projects</span></div><div class="desc">Tracker has enough evidence to baseline current stage duration and delay notes.</div><div class="foot"><span class="badge info">Baseline</span></div></div>
+      </div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Supporting Metrics</h2><span class="owner">watched, not optimized as the headline</span></div>
+      <div class="secthead"><h2>Current Snapshot</h2><span class="owner">as-is baseline before improving the system</span></div>
       <div class="grid">
-        <div class="card"><div class="label">Post-10% update cadence</div><div class="val">75<span class="unit">%</span></div><div class="desc">Jenn, Callie, and Helena are current; Maggie needs a check-in/log review.</div><div class="foot"><span class="badge watch">Tracker baseline</span></div></div>
+        <div class="card"><div class="label">Tracked post-10 projects</div><div class="val">4<span class="unit">projects</span></div><div class="desc">Jenn, Callie, Maggie, and Helena have tracker communication evidence.</div><div class="foot"><span class="badge watch">Tracker baseline</span></div></div>
         <div class="card"><div class="label">Airtable post-10 portfolio</div><div class="val">8<span class="unit">projects</span></div><div class="desc">Production 1, Delivery 1, Installation 6 assigned to the manager.</div><div class="foot"><span class="badge ok">Airtable</span></div></div>
         <div class="card"><div class="label">Missing cadence dates</div><div class="val">4<span class="unit">projects</span></div><div class="desc">Muhi, Olga, Helena furniture, and Femke need tracker/email update dates.</div><div class="foot"><span class="badge risk">Data gap</span></div></div>
-        <div class="card"><div class="label">Reclamations</div><div class="val">6<span class="unit">manager</span></div><div class="desc">Airtable Reclamation tab shows 8 projects total, 6 assigned to the manager.</div><div class="foot"><span class="badge watch">Guardrail</span></div></div>
+        <div class="card"><div class="label">Timeline data quality</div><div class="val">50<span class="unit">%</span></div><div class="desc">4 of 8 active post-10 projects are measurable today; remaining projects need stage dates and last update.</div><div class="foot"><span class="badge info">Improve first</span></div></div>
       </div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Airtable Active Post-10</h2><span class="owner">current manager-owned production/delivery/installation projects</span></div>
+      <div class="secthead"><h2>KPI Definitions</h2><span class="owner">simple formulas for weekly review</span></div>
       <table>
-        <thead><tr><th>Stage</th><th>Projects assigned to manager</th><th class="num">Count</th><th>Cadence status</th></tr></thead>
+        <thead><tr><th>KPI</th><th>Formula</th><th>Target</th><th>Review rhythm</th></tr></thead>
         <tbody>
-          <tr><td>Production</td><td>Jennifer Liu / Jenn</td><td class="num">1</td><td class="status ok">Tracked</td></tr>
-          <tr><td>Delivery</td><td>Callie Shields</td><td class="num">1</td><td class="status ok">Tracked</td></tr>
-          <tr><td>Installation</td><td>Helena's kitchen, Maggie & Pete, Muhi's kitchen, Olga's Kitchen, Helena's furniture, Femke Wolting</td><td class="num">6</td><td class="status watch">2 tracked, 4 missing dates</td></tr>
+          <tr><td>Process connection</td><td>Active post-10 projects with required stage update/call completed and logged / all active post-10 projects with measurable data.</td><td>90%+</td><td>Weekly</td></tr>
+          <tr><td>NPS capture</td><td>Eligible calls where score + reason were captured / eligible calls completed.</td><td>80% pilot, then 95%</td><td>Weekly capture, monthly trend</td></tr>
+          <tr><td>Timeline improvement</td><td>Actual stage days and delay days by project, compared with planned stage dates and prior-month baseline.</td><td>Reduce avoidable delay; 100% stage-date coverage</td><td>Weekly exceptions, monthly trend</td></tr>
         </tbody>
       </table>
-      <div class="note">Photoshoot projects are tracked separately as the north-star stage, not the weekly PM cadence denominator.</div>
+      <div class="note">Photoshoot approval stays the north star, but these three KPIs are the operating system: keep the client connected, capture relationship quality, and make timelines measurable enough to improve.</div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Outcome Signals</h2><span class="owner">watched, not optimized as the headline</span></div>
-      <div class="grid three">
-        <div class="card"><div class="label">NPS coverage</div><div class="val">0<span class="unit">%</span></div><div class="desc">Not tracked yet. Add NPS prompt to post-delivery and post-install calls.</div><div class="foot"><span class="badge risk">Start tracking</span></div></div>
-        <div class="card"><div class="label">Photoshoot stage</div><div class="val">2<span class="unit">manager</span></div><div class="desc">Paul & Sylvia Zamsky and Mallory & David Kitchen are assigned to the manager in Airtable.</div><div class="foot"><span class="badge info">North star</span></div></div>
-        <div class="card"><div class="label">Reclamation projects</div><div class="val">8<span class="unit">total</span></div><div class="desc">6 manager-owned, 2 without manager assignment in the visible Airtable tab.</div><div class="foot"><span class="badge watch">Classify</span></div></div>
-      </div>
+      <div class="secthead"><h2>Counted Projects</h2><span class="owner">current process-connection denominator</span></div>
+      <table>
+        <thead><tr><th>Project</th><th>Current process touchpoint</th><th>Last client touch</th><th class="num">Days since</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Jenn</td><td>Pre-assembly photos shared</td><td>Jun 26, 2026</td><td class="num">5</td><td class="status ok">Connected</td></tr>
+          <tr><td>Callie</td><td>Delivery / installation instructions shared</td><td>Jun 29, 2026</td><td class="num">2</td><td class="status ok">Connected</td></tr>
+          <tr><td>Maggie</td><td>Post-delivery / install support call</td><td>Jun 19, 2026</td><td class="num">12</td><td class="status watch">Needs review</td></tr>
+          <tr><td>Helena</td><td>Pre-installation call</td><td>Jun 29, 2026</td><td class="num">2</td><td class="status ok">Connected</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <section>
-      <div class="secthead"><h2>KPI Ladder</h2><span class="owner">definition</span></div>
+      <div class="secthead"><h2>Operating Ladder</h2><span class="owner">how the three KPIs connect</span></div>
       <div class="ladder">
-        <div class="step"><b>Headline</b><strong>Proactive update cadence</strong><span>% post-10% active projects updated before the client has to ask.</span></div>
-        <div class="step"><b>Quality</b><strong>NPS on calls</strong><span>Capture after delivery and installation calls.</span></div>
-        <div class="step"><b>Guardrail</b><strong>Reclamations</strong><span>Count issues and track days open.</span></div>
-        <div class="step"><b>North star</b><strong>Photoshoot approval</strong><span>Client is willing to showcase the final result.</span></div>
+        <div class="step"><b>KPI 1</b><strong>Connect through process</strong><span>Every stage has the expected email/call and next-step clarity.</span></div>
+        <div class="step"><b>KPI 2</b><strong>Start NPS</strong><span>Capture score and reason after the moments that shape trust.</span></div>
+        <div class="step"><b>KPI 3</b><strong>Improve timelines</strong><span>Track actual stage duration, delay reason, and client-protected changes.</span></div>
+        <div class="step"><b>North star</b><strong>Photoshoot approval</strong><span>Client is satisfied enough to showcase the final result.</span></div>
       </div>
     </section>
   </main>
 
-  <main id="projects" class="view" hidden>
+  <main id="process" class="view" hidden>
     <section>
-      <div class="secthead"><h2>Project Communication Health</h2><span class="owner">from tracker tabs: Asma, Val Nara, Gloria, Jenn, Callie, Maggie, Helena</span></div>
+      <div class="secthead"><h2>Client Connection Through Process</h2><span class="owner">from PM Process Guide</span></div>
       <table>
-        <thead><tr><th>Project</th><th>Current evidence</th><th>Last client touch</th><th class="num">Days since</th><th>Status</th><th>Next PM action</th></tr></thead>
+        <thead><tr><th>Stage / trigger</th><th>Required client touch</th><th>Counts as KPI evidence</th><th>Deadline rule</th></tr></thead>
         <tbody>
-          <tr><td>Jennifer Liu / Jenn</td><td>Airtable: Production; tracker: pre-assembly photos shared</td><td>Jun 26, 2026</td><td class="num">5</td><td class="status ok">On cadence</td><td>Set next update around packaging/shipping milestone.</td></tr>
-          <tr><td>Callie Shields</td><td>Airtable: Delivery; tracker: shipping, timeline changes, assembly instructions</td><td>Jun 29, 2026</td><td class="num">2</td><td class="status ok">On cadence</td><td>Follow installation start and document any support/recovery items.</td></tr>
-          <tr><td>Helena's kitchen</td><td>Airtable: Installation; tracker: delivery/pre-installation call</td><td>Jun 29, 2026</td><td class="num">2</td><td class="status ok">On cadence</td><td>Follow assembly start and log next client update/call.</td></tr>
-          <tr><td>Maggie & Pete</td><td>Airtable: Installation; tracker: delivery call + installation support</td><td>Jun 19, 2026</td><td class="num">12</td><td class="status watch">Review</td><td>Because weekly calls were offered, confirm whether next check-in happened or is scheduled.</td></tr>
-          <tr><td>Muhi's kitchen</td><td>Airtable: Installation; manager assigned</td><td>Airtable date not visible</td><td class="num">-</td><td class="status risk">Missing cadence date</td><td>Add latest proactive client update from tracker/email.</td></tr>
-          <tr><td>Olga's Kitchen</td><td>Airtable: Installation; manager assigned</td><td>Airtable date not visible</td><td class="num">-</td><td class="status risk">Missing cadence date</td><td>Add latest proactive client update from tracker/email.</td></tr>
-          <tr><td>Helena's furniture</td><td>Airtable: Installation; manager assigned</td><td>Airtable date not visible</td><td class="num">-</td><td class="status risk">Missing cadence date</td><td>Add latest proactive client update from tracker/email.</td></tr>
-          <tr><td>Femke Wolting</td><td>Airtable: Installation; manager assigned</td><td>Airtable date not visible</td><td class="num">-</td><td class="status risk">Missing cadence date</td><td>Add latest proactive client update from tracker/email.</td></tr>
-          <tr><td>Kayla Sturtevant</td><td>Airtable: 3 done tasks assigned to Valentyna</td><td>Airtable date not visible</td><td class="num">-</td><td class="status muted">Airtable only</td><td>Connect to tracker/email date before counting in cadence KPI.</td></tr>
-          <tr><td>Yorgo Kapourniotis</td><td>Airtable: 11 to-do tasks, 9 done tasks, 1 archived task</td><td>Airtable date not visible</td><td class="num">-</td><td class="status muted">Airtable only</td><td>Confirm if post-10% active and add latest proactive client update.</td></tr>
-          <tr><td>Asma</td><td>Samples tracking + PM intro</td><td>Jun 30, 2026</td><td class="num">1</td><td class="status muted">Pre-10%</td><td>Keep visible, but exclude from the main post-10% cadence KPI.</td></tr>
-          <tr><td>Val Nara</td><td>No dated communication in tracker</td><td>-</td><td class="num">-</td><td class="status muted">No evidence</td><td>Clarify whether project is active, paused, or should be excluded.</td></tr>
-          <tr><td>Gloria</td><td>Samples tracking + PM intro</td><td>Jun 4, 2026</td><td class="num">27</td><td class="status muted">Pre-10% / review</td><td>Clarify if still in sample stage or already moved to production in Airtable.</td></tr>
-          <tr><td>Ilene's Kitchen & Vanity</td><td>Airtable: On hold 5, Done 27</td><td>Airtable date not visible</td><td class="num">-</td><td class="status watch">Issue candidate</td><td>Classify whether on-hold tasks are reclamations, production blockers, or normal delivery tasks.</td></tr>
+          <tr><td>Manager handoff</td><td>Manager introduction + delivery address confirmation</td><td>Email logged with project status, next step, and address request/confirmation.</td><td>Within 1 business day of designer intro.</td></tr>
+          <tr><td>Production launched</td><td>Production timeline email</td><td>Client receives pre-assembly date, pick-up date, and timeline/profile link.</td><td>Same day timeline is confirmed with manufacturer.</td></tr>
+          <tr><td>Pre-assembly complete</td><td>Photos/videos email</td><td>Client-facing link to uploaded photos/videos and next step.</td><td>Within 1 business day after internal review.</td></tr>
+          <tr><td>Packaging complete</td><td>Packaging photos email</td><td>Client sees packaged project and is told pick-up coordination is next.</td><td>Within 1 business day of packaging photos being ready.</td></tr>
+          <tr><td>Cargo picked up</td><td>Pick-up email + post pick-up call</td><td>Email plus call note covering shipping timeline, unloaders, address, trash, and installer walkthrough.</td><td>Email same day; call scheduled within 2 business days.</td></tr>
+          <tr><td>Shipment movement / changes</td><td>Port, tracking, US arrival, or timeline-change update</td><td>Updated ETA, reason for change when applicable, and next expected client touch.</td><td>Same day the PM learns of the milestone/change.</td></tr>
+          <tr><td>Delivery / installation</td><td>Delivery confirmation and installation support</td><td>Client knows delivery window, install prep, and who to contact during install.</td><td>Before delivery date; same-day response during installation.</td></tr>
+          <tr><td>After installation</td><td>Satisfaction check + photoshoot next step</td><td>Call note includes satisfaction, issues, NPS prompt, and photoshoot readiness.</td><td>Within 3 business days of installation completion.</td></tr>
         </tbody>
       </table>
-      <div class="note">Main KPI denominator: projects after 10% payment / moved to production. Sample-stage projects stay visible for context, but do not count until they enter production-stage ownership.</div>
+      <div class="note">This KPI should be measured by completed PM tasks or logged client touches in Airtable. A message counts only when it gives status, next step, timing, blocker, action needed, or a milestone artifact link.</div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Active Project Gaps</h2><span class="owner">what must be connected before the KPI is fully fair</span></div>
+      <table>
+        <thead><tr><th>Project</th><th>Stage</th><th>Status</th><th>Next data action</th></tr></thead>
+        <tbody>
+          <tr><td>Jennifer Liu / Jenn</td><td>Production</td><td class="status ok">Tracked</td><td>Keep next milestone update tied to packaging/shipping.</td></tr>
+          <tr><td>Callie Shields</td><td>Delivery</td><td class="status ok">Tracked</td><td>Log installation start and post-install satisfaction touch.</td></tr>
+          <tr><td>Helena's kitchen</td><td>Installation</td><td class="status ok">Tracked</td><td>Log next installation progress touch.</td></tr>
+          <tr><td>Maggie & Pete</td><td>Installation</td><td class="status watch">Needs review</td><td>Confirm whether the weekly support call happened or is scheduled.</td></tr>
+          <tr><td>Muhi's kitchen</td><td>Installation</td><td class="status risk">Missing last update</td><td>Add latest client touch or mark exception.</td></tr>
+          <tr><td>Olga's Kitchen</td><td>Installation</td><td class="status risk">Missing last update</td><td>Add latest client touch or mark exception.</td></tr>
+          <tr><td>Helena's furniture</td><td>Installation</td><td class="status risk">Missing last update</td><td>Add latest client touch or mark exception.</td></tr>
+          <tr><td>Femke Wolting</td><td>Installation</td><td class="status risk">Missing last update</td><td>Add latest client touch or mark exception.</td></tr>
+        </tbody>
+      </table>
     </section>
   </main>
 
-  <main id="timeframes" class="view" hidden>
+  <main id="timeline" class="view" hidden>
+    <section>
+      <div class="secthead"><h2>Timeline KPI</h2><span class="owner">baseline now, then track improvement</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">Current measurable projects</div><div class="val">4<span class="unit">of 8</span></div><div class="desc">Jenn, Callie, Maggie, and Helena have enough tracker evidence for stage-duration baseline.</div><div class="foot"><span class="badge watch">Baseline</span></div></div>
+        <div class="card"><div class="label">Target data coverage</div><div class="val">100<span class="unit">%</span></div><div class="desc">Every post-10 project should have planned dates, actual dates, and delay reason by stage.</div><div class="foot"><span class="badge info">Setup KPI</span></div></div>
+        <div class="card"><div class="label">Improvement metric</div><div class="val">Delay<span class="unit">days</span></div><div class="desc">Track avoidable delay days and whether the client was protected from surprises.</div><div class="foot"><span class="badge ok">Trend</span></div></div>
+      </div>
+    </section>
+
     <section>
       <div class="secthead"><h2>Stage Timeframes</h2><span class="owner">actual time spent in each visible stage from tracker data</span></div>
       <table>
@@ -250,22 +269,56 @@
           <tr><td>Helena</td><td>Post-delivery / pre-install</td><td>Delivery planning Jun 24</td><td>Pre-install call Jun 29</td><td class="num">5</td><td>Assembly expected next week; next update should be logged.</td></tr>
         </tbody>
       </table>
-      <div class="note">Airtable timeline data should replace these tracker-derived calculations once accessible. Add planned start/end beside actual start/end to calculate delay days cleanly.</div>
+      <div class="note">This is the starting baseline, not the final KPI calculation. Airtable timeline records should become the source of truth once planned and actual stage dates are complete.</div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Stage Timeframe Fields To Add</h2><span class="owner">needed for clean planned vs actual reporting</span></div>
+      <div class="secthead"><h2>Fields To Add</h2><span class="owner">needed for clean planned vs actual reporting</span></div>
       <div class="grid three">
         <div class="card"><div class="label">Planned vs actual</div><div class="val">4<span class="unit">dates</span></div><div class="desc">Planned start/end and actual start/end per stage or substage.</div><div class="foot"><span class="badge info">Schema</span></div></div>
         <div class="card"><div class="label">Delay reason</div><div class="val">1<span class="unit">owner</span></div><div class="desc">Manufacturer, logistics, client, internal, customs, installer, or other.</div><div class="foot"><span class="badge info">Schema</span></div></div>
-        <div class="card"><div class="label">Client protected?</div><div class="val">Y/N</div><div class="desc">Was the client updated before the date changed or before they had to ask?</div><div class="foot"><span class="badge info">KPI link</span></div></div>
+        <div class="card"><div class="label">Client protected?</div><div class="val">Y/N</div><div class="desc">Was the client updated before the date changed or before they had to ask?</div><div class="foot"><span class="badge info">Connects KPI 1</span></div></div>
       </div>
     </section>
   </main>
 
   <main id="nps" class="view" hidden>
     <section>
-      <div class="secthead"><h2>NPS & Call Analysis</h2><span class="owner">second KPI layer to start tracking on client calls</span></div>
+      <div class="secthead"><h2>NPS Tracking Plan</h2><span class="owner">start lightweight, make it consistent</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">Pilot KPI</div><div class="val">NPS<span class="unit">capture</span></div><div class="desc">First measure whether we asked and logged score + reason, before judging the score trend.</div><div class="foot"><span class="badge watch">Start</span></div></div>
+        <div class="card"><div class="label">Best moment</div><div class="val">3<span class="unit">calls</span></div><div class="desc">Post-delivery, post-install, and after any reclamation is resolved.</div><div class="foot"><span class="badge ok">Low friction</span></div></div>
+        <div class="card"><div class="label">Risk</div><div class="val">Bias</div><div class="desc">Clients may give a nicer score on a live call, so follow up with a one-question form.</div><div class="foot"><span class="badge info">Guardrail</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Should NPS Be Asked On Calls?</h2><span class="owner">recommended approach</span></div>
+      <table>
+        <thead><tr><th>Option</th><th>How it works</th><th>Use for KPI?</th><th>Recommendation</th></tr></thead>
+        <tbody>
+          <tr><td>Ask live on call</td><td>Manager asks a simple 0-10 question and logs the score/reason in Airtable.</td><td class="status watch">Good for pilot</td><td>Use for the first month because it is easy to start and fits existing calls.</td></tr>
+          <tr><td>Send form after call</td><td>Client receives a 1-minute form with score, reason, and open concern field.</td><td class="status ok">Best long-term</td><td>Use as the official KPI once the habit is created, because it reduces pressure and bias.</td></tr>
+          <tr><td>Analyze Gemini notes only</td><td>Infer satisfaction from call notes without asking the client directly.</td><td class="status risk">No</td><td>Use as context only. It is useful for sentiment, but not a real NPS score.</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Best setup: ask gently at the end of the call, then send the same question as a follow-up form. If the form is answered, the form score becomes official; if not, the call score is a temporary pilot value.</div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Call Script</h2><span class="owner">consistent wording for PM calls</span></div>
+      <table>
+        <thead><tr><th>Moment</th><th>Question</th><th>Fields to log</th><th>Follow-up rule</th></tr></thead>
+        <tbody>
+          <tr><td>Post-delivery</td><td>Based on the delivery experience so far, how likely are you to recommend Corner from 0 to 10?</td><td>Score, reason, open concern, next action.</td><td>If 0-8, create recovery task within 1 business day.</td></tr>
+          <tr><td>Post-install</td><td>Now that installation is complete, how likely are you to recommend Corner from 0 to 10?</td><td>Score, reason, unresolved issues, photoshoot readiness.</td><td>If 9-10 and no open issues, ask for photoshoot approval.</td></tr>
+          <tr><td>After reclamation resolution</td><td>After how we handled this issue, how likely are you to recommend Corner from 0 to 10?</td><td>Score, issue type, resolution date, recovery note.</td><td>If under 9, review recovery quality with manager.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Current Call Analysis</h2><span class="owner">second KPI layer to start tracking on client calls</span></div>
       <table>
         <thead><tr><th>Project</th><th>Call / note source</th><th>Relationship signal</th><th>NPS status</th><th>Follow-up</th></tr></thead>
         <tbody>
@@ -275,11 +328,11 @@
           <tr><td>Helena</td><td>Post-pick-up call, May 18; pre-install call, Jun 29</td><td>Explicit positive signal: client was very happy so far.</td><td class="status risk">Not asked</td><td>Convert qualitative signal into NPS score on next installation check-in.</td></tr>
         </tbody>
       </table>
-      <div class="note">Gmail has Gemini/Fathom note candidates, but this version uses PM tracker call notes only. Next pass should read the relevant call-note threads and add sentiment, open issues, and NPS backfill.</div>
+      <div class="note">Gemini/Fathom notes can help identify sentiment and concerns, but they should not replace a direct score from the client.</div>
     </section>
 
     <section>
-      <div class="secthead"><h2>Reclamations</h2><span class="owner">issue count and time-to-resolution guardrail</span></div>
+      <div class="secthead"><h2>Reclamations</h2><span class="owner">use as NPS/recovery context, not a main KPI</span></div>
       <div class="grid three">
         <div class="card"><div class="label">Manager-owned reclamations</div><div class="val">6</div><div class="desc">Ilene, Nicole, Courtney, Tommy's kitchen, Tommy Pluschkell, and Molly are assigned to the manager.</div><div class="foot"><span class="badge watch">Classify</span></div></div>
         <div class="card"><div class="label">Average days open</div><div class="val">-</div><div class="desc">Need created/resolved dates from Airtable records before calculating age.</div><div class="foot"><span class="badge muted">Date fields needed</span></div></div>
