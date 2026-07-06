@@ -50,13 +50,6 @@
   .theme-btn{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
     width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:15px;box-shadow:var(--shadow)}
   .theme-btn:hover{border-color:var(--accent)}
-  .meta{display:flex;flex-wrap:wrap;gap:9px 16px;align-items:center;margin:0 0 18px;padding:11px 14px;
-    background:var(--panel);border:1px solid var(--line);border-radius:12px;font-size:12.5px;box-shadow:var(--shadow)}
-  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle;background:var(--green)}
-  .sep{color:var(--line)}
-  .src{color:var(--muted)} .src b{color:var(--ink-soft);font-weight:680}
-  .scope-tag{margin-left:auto;font-size:11px;font-weight:760;letter-spacing:.04em;text-transform:uppercase;
-    padding:3px 9px;border-radius:999px;color:var(--amber);background:var(--amber-bg)}
   .tabs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px}
   .tab{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
     padding:8px 15px;border-radius:999px;font-size:13px;font-weight:680;cursor:pointer;box-shadow:var(--shadow)}
@@ -75,7 +68,7 @@
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .grid.three{grid-template-columns:repeat(3,1fr)}
   @media(max-width:920px){.grid,.grid.three{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.grid,.grid.three{grid-template-columns:1fr}.hero-num{font-size:34px}.scope-tag{margin-left:0}}
+  @media(max-width:560px){.grid,.grid.three{grid-template-columns:1fr}.hero-num{font-size:34px}}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);min-height:132px;display:flex;flex-direction:column}
   .label{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px}
   .val{font-size:28px;font-weight:780;letter-spacing:-.6px;line-height:1.05}
@@ -133,13 +126,6 @@
     </div>
     <button class="theme-btn" id="theme-btn" title="Toggle theme" aria-label="Toggle theme">O</button>
   </header>
-
-  <div class="meta">
-    <span><span class="dot"></span><b>Reviewed . process doc + tracker/Airtable baseline</b></span>
-    <span class="sep">|</span>
-    <span class="src">Sources: <b>PM Process Guide</b> . <b>PM tracker</b> . <b>Airtable connected</b></span>
-    <span class="scope-tag">Internal . client names visible</span>
-  </div>
 
   <div class="tabs" role="tablist">
     <button class="tab" data-view="dashboard" aria-selected="true">Dashboard</button>
