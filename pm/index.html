@@ -132,6 +132,9 @@
   <div class="tabs" role="tablist">
     <button class="tab" data-view="dashboard" aria-selected="true">Project Manager KPI</button>
     <button class="tab" data-view="technical">Technical Design KPI</button>
+    <button class="tab" data-view="process">Process</button>
+    <button class="tab" data-view="nps">NPS</button>
+    <button class="tab" data-view="timeline">Timeline</button>
   </div>
 
   <main id="dashboard" class="view">
@@ -261,7 +264,7 @@
     </section>
   </main>
 
-  <main id="process" class="view">
+  <main id="process" class="view" hidden>
     <section>
       <div class="secthead"><h2>Client Connection Through Process</h2><span class="owner">dates from PM Process Guide tracker</span></div>
       <table>
@@ -296,7 +299,7 @@
     </section>
   </main>
 
-  <main id="timeline" class="view">
+  <main id="timeline" class="view" hidden>
     <section>
       <div class="secthead"><h2>Client Timelines</h2><span class="owner">one row per client; open to see stage details</span></div>
       <div class="grid three">
@@ -431,7 +434,7 @@
 
   </main>
 
-  <main id="nps" class="view">
+  <main id="nps" class="view" hidden>
     <section>
       <div class="secthead"><h2>NPS Tracking Plan</h2><span class="owner">start lightweight, make it consistent</span></div>
       <div class="grid three">
@@ -458,10 +461,7 @@
   tabs.forEach(function(tab){
     tab.addEventListener("click", function(){
       tabs.forEach(function(t){ t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
-      document.querySelectorAll(".view").forEach(function(view){
-        var projectManagerView = ["dashboard", "process", "nps", "timeline"].indexOf(view.id) !== -1;
-        view.hidden = tab.dataset.view === "dashboard" ? !projectManagerView : view.id !== tab.dataset.view;
-      });
+      document.querySelectorAll(".view").forEach(function(view){ view.hidden = view.id !== tab.dataset.view; });
     });
   });
 })();
