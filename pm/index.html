@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Corner - Operations KPI</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#10131a; --ink-soft:#3c4452;
+    --muted:#6b7280; --faint:#9aa1ad; --line:#e7e9ee; --line-soft:#eef0f4;
+    --accent:#4f46e5; --accent-soft:#eef0fe; --accent-ink:#4338ca;
+    --green:#0f9d58; --green-bg:#e7f6ee; --amber:#b9770a; --amber-bg:#fdf2e1;
+    --red:#d2453a; --red-bg:#fde9e7; --blue:#2563eb; --blue-bg:#e8effd;
+    --grey:#7a818c; --grey-bg:#eef0f3;
+    --shadow:0 1px 2px rgba(16,19,26,.04),0 4px 16px rgba(16,19,26,.05);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    html[data-theme="auto"]{
+      --bg:#0d0f14; --panel:#161922; --ink:#eef1f6; --ink-soft:#c4cad6;
+      --muted:#9aa1ad; --faint:#6b7280; --line:#262b36; --line-soft:#1e222c;
+      --accent:#8b87ff; --accent-soft:#20223a; --accent-ink:#b6b3ff;
+      --green:#46d18a; --green-bg:#15271d; --amber:#e0a23c; --amber-bg:#2a2113;
+      --red:#f06d63; --red-bg:#321b1d; --blue:#6ea0ff; --blue-bg:#16223c;
+      --grey:#9aa1ad; --grey-bg:#222732;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);
+    }
+  }
+  html[data-theme="dark"]{
+    --bg:#0d0f14; --panel:#161922; --ink:#eef1f6; --ink-soft:#c4cad6;
+    --muted:#9aa1ad; --faint:#6b7280; --line:#262b36; --line-soft:#1e222c;
+    --accent:#8b87ff; --accent-soft:#20223a; --accent-ink:#b6b3ff;
+    --green:#46d18a; --green-bg:#15271d; --amber:#e0a23c; --amber-bg:#2a2113;
+    --red:#f06d63; --red-bg:#321b1d; --blue:#6ea0ff; --blue-bg:#16223c;
+    --grey:#9aa1ad; --grey-bg:#222732;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.5 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:1200px;margin:0 auto;padding:26px 20px 72px}
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px}
+  .brand{display:flex;flex-direction:column;gap:3px}
+  .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  h1{font-size:24px;margin:0;letter-spacing:-.4px;font-weight:760}
+  .sub{color:var(--muted);font-size:13px}
+  .theme-btn{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+    width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:15px;line-height:1;box-shadow:var(--shadow)}
+  .theme-btn:hover{border-color:var(--accent)}
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px}
+  .tab{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+    padding:8px 15px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.12s;box-shadow:var(--shadow)}
+  .tab:hover{border-color:var(--accent)}
+  .tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  section{margin:22px 0}
+  .secthead{display:flex;align-items:baseline;gap:10px;margin:0 2px 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  .secthead h2{font-size:15px;margin:0;letter-spacing:-.1px}
+  .secthead .owner{color:var(--muted);font-size:12px}
+  .hero{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+  .hero-top{display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:12.5px;font-weight:650}
+  .hero-num{font-size:42px;line-height:1;font-weight:760;letter-spacing:-1px;margin:8px 0 10px;color:var(--amber)}
+  .hero-num span{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:0}
+  .track{height:10px;background:var(--line-soft);border-radius:999px;overflow:hidden}
+  .fill{height:100%;border-radius:999px;background:var(--amber);width:90%}
+  .hero-sub{font-size:12px;color:var(--faint);margin-top:9px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:920px){.grid,.grid.three{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid,.grid.three{grid-template-columns:1fr}.hero-num{font-size:34px}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 12px;box-shadow:var(--shadow);min-height:132px;display:flex;flex-direction:column;transition:.12s}
+  .card:hover{border-color:var(--line);transform:translateY(-1px)}
+  .label{font-size:12px;color:var(--muted);font-weight:650;margin-bottom:9px;line-height:1.3}
+  .val{font-size:28px;font-weight:740;letter-spacing:-.6px;line-height:1}
+  .val .unit{font-size:12.5px;color:var(--muted);font-weight:600;margin-left:4px;letter-spacing:0}
+  .desc{font-size:12px;color:var(--muted);margin-top:7px}
+  .foot{margin-top:auto;padding-top:12px}
+  .badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;padding:3px 7px;border-radius:999px;text-transform:uppercase}
+  .badge.ok{color:var(--green);background:var(--green-bg)}
+  .badge.watch{color:var(--amber);background:var(--amber-bg)}
+  .badge.risk{color:var(--red);background:var(--red-bg)}
+  .badge.info{color:var(--blue);background:var(--blue-bg)}
+  .badge.muted{color:var(--grey);background:var(--grey-bg)}
+  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:13px;box-shadow:var(--shadow)}
+  .step b{display:block;font-size:12px;color:var(--accent-ink);margin-bottom:6px}
+  .step strong{display:block;font-size:15px;line-height:1.25;margin-bottom:6px}
+  .step span{font-size:12px;color:var(--muted)}
+  @media(max-width:920px){.ladder{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.ladder{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:13.5px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;background:var(--line-soft)}
+  tbody tr:last-child td{border-bottom:0}
+  td.num{text-align:right;white-space:nowrap}
+  .status{font-weight:760}
+  .status.ok{color:var(--green)} .status.watch{color:var(--amber)} .status.risk{color:var(--red)} .status.muted{color:var(--grey)}
+  .note{font-size:12px;color:var(--faint);margin-top:8px}
+  .timeline-list{display:flex;flex-direction:column;gap:10px}
+  .timeline-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .timeline-item summary{list-style:none;display:grid;grid-template-columns:1.1fr 1.4fr .7fr .9fr 1.4fr;gap:12px;align-items:center;padding:13px 15px;cursor:pointer}
+  .timeline-item summary::-webkit-details-marker{display:none}
+  .timeline-item summary:before{content:"+";width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:var(--line-soft);color:var(--ink-soft);font-weight:780}
+  .timeline-item[open] summary:before{content:"-";background:var(--accent-soft);color:var(--accent-ink)}
+  .timeline-head{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;background:var(--line-soft);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr 1.4fr .7fr .9fr 1.4fr;gap:12px;padding:9px 15px}
+  .client-name{font-size:15px;font-weight:760;color:var(--ink)}
+  .timeline-summary{font-size:12.5px;color:var(--ink-soft)}
+  .timeline-mini{font-size:12px;color:var(--muted)}
+  .timeline-detail{padding:0 14px 14px}
+  .timeline-detail table{box-shadow:none}
+  @media(max-width:760px){
+    .timeline-head{display:none}
+    .timeline-item summary{grid-template-columns:1fr;gap:5px}
+    .timeline-item summary:before{grid-row:1;justify-self:start}
+  }
+  .view[hidden]{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="eyebrow">Corner Renovation</span>
+      <h1>Operations Team KPI</h1>
+      <span class="sub">Project Management KPI . Technical Design KPI . client connection . NPS start . timeline improvement</span>
+    </div>
+    <button class="theme-btn" id="theme-btn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" data-view="dashboard" aria-selected="true">Project Management KPI</button>
+    <button class="tab" data-view="technical">Technical Design KPI</button>
+    <button class="tab" data-view="process">Process</button>
+    <button class="tab" data-view="nps">NPS</button>
+    <button class="tab" data-view="timeline">Timeline</button>
+  </div>
+
+  <main id="dashboard" class="view">
+    <section>
+      <div class="hero">
+        <div class="hero-top">
+          <span>KPI 1 . client connection through the process</span>
+          <span>Target: 90%+</span>
+        </div>
+        <div class="hero-num">90<span>% . 9 of 10 counted clients have client-connection evidence from our side</span></div>
+        <div class="track"><div class="fill"></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Three KPI System</h2><span class="owner">what the manager owns weekly</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">1. Process connection</div><div class="val">90<span class="unit">%</span></div><div class="desc">Client, client-side representative, or installer/consignee was connected by Corner through email, call, meeting, Quo/SMS, or delivery coordination evidence.</div><div class="foot"><span class="badge ok">Weekly KPI</span></div></div>
+        <div class="card"><div class="label">2. NPS capture</div><div class="val">0<span class="unit">%</span></div><div class="desc">Not tracked yet. Start with post-install calls.</div><div class="foot"><span class="badge risk">Start now</span></div></div>
+        <div class="card"><div class="label">3. Timeline visibility</div><div class="val">4<span class="unit">projects</span></div><div class="foot"><span class="badge info">Baseline</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Current Snapshot</h2><span class="owner">as-is baseline before improving the system</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">KPI 1 denominator</div><div class="val">10<span class="unit">clients</span></div><div class="desc">Tommy Pluschkell, Kayla, Yorgo, Gloria, Jennifer, Maggie & Pete, Laura, Muhi, Olga, and Femke.</div><div class="foot"><span class="badge ok">Counted clients</span></div></div>
+        <div class="card"><div class="label">Connected</div><div class="val">9<span class="unit">clients</span></div><div class="desc">Tommy, Kayla, Gloria, Jennifer, Maggie & Pete, Laura, Muhi, Olga, and Femke have client-connection evidence.</div><div class="foot"><span class="badge ok">Gmail + Quo evidence</span></div></div>
+        <div class="card"><div class="label">Missing connection evidence</div><div class="val">1<span class="unit">client</span></div><div class="desc">Yorgo still needs proactive client/client-side update evidence.</div><div class="foot"><span class="badge risk">Data gap</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>KPI Definitions</h2><span class="owner">simple formulas for weekly review</span></div>
+      <table>
+        <thead><tr><th>KPI</th><th>Formula</th><th>Target</th><th>Review rhythm</th></tr></thead>
+        <tbody>
+          <tr><td>Process connection</td><td>Counted clients with client/client-side connection evidence from Corner / all counted clients in KPI 1. Evidence can be direct email, PM/client call evidence, meeting invite, Quo/SMS, or delivery coordination proving the client was updated.</td><td>90%+</td><td>Weekly</td></tr>
+          <tr><td>NPS capture</td><td>Eligible calls where score + reason were captured / eligible calls completed.</td><td>80% pilot, then 95%</td><td>Weekly capture, monthly trend</td></tr>
+          <tr><td>Timeline improvement</td><td>Actual stage days and delay days by project, compared with planned stage dates and prior-month baseline.</td><td>Reduce avoidable delay; 100% stage-date coverage</td><td>Weekly exceptions, monthly trend</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Photoshoot approval stays the north star, but these three KPIs are the operating system: keep the client connected, capture relationship quality, and make timelines measurable enough to improve.</div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Counted Projects</h2><span class="owner">current process-connection denominator</span></div>
+      <table>
+        <thead><tr><th>Project</th><th>Current process touchpoint</th><th>Last client touch</th><th class="num">Days since</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Tommy Pluschkell</td><td>Quo/SMS scheduling follow-up for Anatolii visit</td><td>Jul 8, 2026</td><td class="num">0</td><td class="status ok">Connected</td></tr>
+          <tr><td>Kayla Sturtevant</td><td>Project/install clarification to client-side contact Viacheslav</td><td>Apr 16, 2026</td><td class="num">83</td><td class="status ok">Connected</td></tr>
+          <tr><td>Yorgo Kapourniotis</td><td>No direct Valentyna client email found</td><td>Vendor/internal/payment evidence only</td><td class="num">-</td><td class="status risk">Missing evidence</td></tr>
+          <tr><td>Gloria Feurra</td><td>Designer/client thread with Corner updates and deposit-stage coordination</td><td>Jun 15, 2026</td><td class="num">23</td><td class="status ok">Connected</td></tr>
+          <tr><td>Jennifer Liu</td><td>Pickup, ETA, dashboard/photos, and delivery-date update to Jennifer</td><td>Jul 8, 2026</td><td class="num">0</td><td class="status ok">Connected</td></tr>
+          <tr><td>Maggie & Pete</td><td>Delivery/install coordination references Pete calls and consignee updates</td><td>Jun 12, 2026</td><td class="num">26</td><td class="status ok">Connected</td></tr>
+          <tr><td>Laura</td><td>Installation check-in and support email</td><td>Jun 23, 2026</td><td class="num">15</td><td class="status ok">Connected</td></tr>
+          <tr><td>Muhi</td><td>Hardware / installation support updates</td><td>Jul 7, 2026</td><td class="num">1</td><td class="status ok">Connected</td></tr>
+          <tr><td>Olga</td><td>Recurring Olga/Yulya call evidence and direct project forwards</td><td>May 19, 2026</td><td class="num">50</td><td class="status ok">Connected</td></tr>
+          <tr><td>Femke</td><td>Delivery coordination includes checking with client and scheduled receiving plan</td><td>Sep 29, 2025</td><td class="num">282</td><td class="status ok">Connected</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Operating Ladder</h2><span class="owner">how the three KPIs connect</span></div>
+      <div class="ladder">
+        <div class="step"><b>KPI 1</b><strong>Connect through process</strong><span>Every stage has the expected email/call and next-step clarity.</span></div>
+        <div class="step"><b>KPI 2</b><strong>Start NPS</strong><span>Capture score and reason after the moments that shape trust.</span></div>
+        <div class="step"><b>KPI 3</b><strong>Improve timelines</strong><span>Track actual stage duration, delay reason, and client-protected changes.</span></div>
+        <div class="step"><b>North star</b><strong>Photoshoot approval</strong><span>Client is satisfied enough to showcase the final result.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <main id="technical" class="view" hidden>
+    <section>
+      <div class="hero">
+        <div class="hero-top">
+          <span>Technical Design KPI . average tracked TD time</span>
+          <span>Baseline from rows where time was logged</span>
+        </div>
+        <div class="hero-num">2.1<span>working days . 17 hours average from 6 tracked Borys TD rows</span></div>
+        <div class="track"><div class="fill" style="width:62%"></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Technical Design KPIs</h2><span class="owner">Borys baseline from Technical Drawings sheet</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">1. Average tracked TD time</div><div class="val">2.1<span class="unit">days</span></div><div class="desc">17 hours at 8 hours/day. Average of tracked Borys rows: 10, 10, 12, 14, 16, and 40 hours.</div><div class="foot"><span class="badge info">Baseline</span></div></div>
+        <div class="card"><div class="label">2. Process system usage</div><div class="val">100<span class="unit">%</span></div><div class="desc">Roadmap target: Process System v1 used across 100% of new Design-to-TD projects.</div><div class="foot"><span class="badge ok">Roadmap KPI</span></div></div>
+        <div class="card"><div class="label">3. TD status completion</div><div class="val">92<span class="unit">%</span></div><div class="desc">24 of 26 statused, non-hold Borys TD rows are marked done in the schedule after removing Spencer.</div><div class="foot"><span class="badge watch">Baseline</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>KPI Definitions</h2><span class="owner">how to calculate weekly</span></div>
+      <table>
+        <thead><tr><th>KPI</th><th>Formula</th><th>Current baseline</th><th>Target</th></tr></thead>
+        <tbody>
+          <tr><td>Average tracked TD time</td><td>Average hours from Borys TD rows where model/layout or related time was logged. Translate hours into working days using 8 hours = 1 day.</td><td>2.1 working days from 6 tracked rows</td><td>Build baseline, then reduce avoidable time</td></tr>
+          <tr><td>Process system usage</td><td>New Design-to-TD projects using the process tracker / all new Design-to-TD projects.</td><td>100% from roadmap</td><td>100%</td></tr>
+          <tr><td>TD status completion</td><td>Borys TD rows marked done / statused Borys TD rows, excluding on-hold rows and rows that did not convert into a client.</td><td>24 / 26 = 92%</td><td>90%+</td></tr>
+          <tr><td>Schedule predictability</td><td>Completed TD rows finished within planned duration / completed TD rows with plan and fact durations.</td><td>4 / 5 = 80%</td><td>90%+</td></tr>
+        </tbody>
+      </table>
+      <div class="note">The time-tracking KPI should become cleaner once every new TD row has separate fields for model creation time and layout creation time.</div>
+    </section>
+
+    <section>
+      <div class="secthead"><h2>Current TD Schedule</h2><span class="owner">selected Borys rows from the customer calculation sheet</span></div>
+      <table>
+        <thead><tr><th>Client</th><th>Furniture</th><th>Fact dates</th><th>TD status</th><th>Time logged</th></tr></thead>
+        <tbody>
+          <tr><td>Callie</td><td>Kitchen</td><td>Feb 9 -> Feb 13</td><td class="status ok">Done</td><td>TD split: 12</td></tr>
+          <tr><td>Yorgo</td><td>Kitchen</td><td>Jan 27 -> Feb 20</td><td class="status ok">Done</td><td>-</td></tr>
+          <tr><td>Yorgo</td><td>Master Closet</td><td>Started Mar 9</td><td class="status ok">Done</td><td>10 hours</td></tr>
+          <tr><td>Yorgo</td><td>Bedroom 1 (Office)</td><td>Started Mar 9</td><td class="status ok">Done</td><td>14 hours</td></tr>
+          <tr><td>Yorgo</td><td>Bedroom 2 (Office)</td><td>Started Mar 9</td><td class="status ok">Done</td><td>2 hours; calc 10</td></tr>
+          <tr><td>Jenn</td><td>Kitchen + pantry</td><td>Mar 25 -> Mar 20</td><td class="status ok">Done</td><td>TD client: 40</td></tr>
+          <tr><td>Gloria Feurra</td><td>Kitchen</td><td>Started Jun 18</td><td class="status ok">Done</td><td>-</td></tr>
+          <tr><td>Ryan Lenox</td><td>-</td><td>Started Jun 5</td><td class="status muted">Not set</td><td>16 hours</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <main id="process" class="view" hidden>
+    <section>
+      <div class="secthead"><h2>Client Connection Through Process</h2><span class="owner">dates from PM Process Guide tracker</span></div>
+      <table>
+        <thead><tr><th>Stage / trigger</th><th>Asma</th><th>Val Nara</th><th>Gloria</th><th>Jenn</th><th>Callie</th><th>Maggie</th><th>Helena</th></tr></thead>
+        <tbody>
+          <tr><td>Samples Process . Samples Tracking Email</td><td>19.06.2026<br>30.06.2026</td><td></td><td>19.05.2026<br>04.06.2026</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Samples Process . Designer Introduction</td><td>15.06.2026</td><td></td><td>13.05.2026</td><td>30.04.2026</td><td>-</td><td>-</td><td>24.03.2026</td></tr>
+          <tr><td>Samples Process . PM Introduction</td><td>15.06.2026</td><td></td><td>13.05.2026</td><td>08.05.2026</td><td>23.03.2026</td><td>27.03.2026</td><td>25.03.2026</td></tr>
+          <tr><td>Production + Delivery Planning . Timeline Update Email + Dashboard link</td><td></td><td></td><td></td><td>13.05.2026<br>02-09.06.2026<br>12.06.2026</td><td>25.03.2026</td><td>30.03.2026<br>09.04.2026</td><td>25.03.2026</td></tr>
+          <tr><td>Production + Delivery Planning . Pre-assembly photos (Dashboard + Email)</td><td></td><td></td><td></td><td>26.06.2026</td><td>22.04.2026</td><td>17.04.2026</td><td>-</td></tr>
+          <tr><td>Production + Delivery Planning . Packaging Email</td><td></td><td></td><td></td><td>03.07.2026</td><td>-</td><td>-</td><td>25.03.2026</td></tr>
+          <tr><td>Post Pick-up CALL</td><td></td><td></td><td></td><td></td><td>27.04.2026</td><td>25.05.2026</td><td>18.05.2026</td></tr>
+          <tr><td>Shipping . Cargo was picked up</td><td></td><td></td><td></td><td>08.07.2026</td><td>04.05.2026</td><td>24.04.2026</td><td>-</td></tr>
+          <tr><td>Shipping . Delivery address confirmation</td><td></td><td></td><td></td><td>10.06.2026</td><td>23.03.2026</td><td>07.04.2026</td><td>08.04.2026</td></tr>
+          <tr><td>Shipping . Photo upload</td><td></td><td></td><td></td><td></td><td>30.04.2026</td><td>21.04.2026</td><td>-</td></tr>
+          <tr><td>Shipping . Cargo arrived at the port</td><td></td><td></td><td></td><td></td><td>14.04.2026</td><td>04.05.2026</td><td>-</td></tr>
+          <tr><td>Shipping . Shipping tracking</td><td></td><td></td><td></td><td></td><td>28.05.2026</td><td>04.05.2026</td><td>14.04.2026</td></tr>
+          <tr><td>Shipping . Timeline update/change</td><td></td><td></td><td></td><td></td><td>19.05.2026<br>28.05.2026<br>05.06.2026<br>17.06.2026<br>25.06.2026</td><td>14.05.2026</td><td>30.03.2026<br>10.04.2026<br>24.04.2026<br>06.05.2026<br>14.05.2026</td></tr>
+          <tr><td>Shipping . Cargo arrived to US</td><td></td><td></td><td></td><td></td><td>18.06.2026</td><td>01.06.2026<br>05.06.2026</td><td>18.05.2026</td></tr>
+          <tr><td>Documents Preparations . Share instructions</td><td></td><td></td><td></td><td></td><td>29.06.2026</td><td>14.05.2026</td><td>25.03.2026<br>22.04.2026</td></tr>
+          <tr><td>Ground Delivery . Cargo ready for pick up</td><td></td><td></td><td></td><td></td><td></td><td>05.06.2026</td><td>22.05.2026 - 01.06.2026</td></tr>
+          <tr><td>Ground Delivery . Photo upload</td><td></td><td></td><td></td><td></td><td></td><td>-</td><td>01.06.2026</td></tr>
+          <tr><td>Ground Delivery . Schedule delivery</td><td></td><td></td><td></td><td></td><td>29.06-08.07.2026</td><td>09.06.2026<br>12.06.2026</td><td>04.06.2026<br>10.06.2026<br>16.06.2026<br>24.06.2026</td></tr>
+          <tr><td>Post Delivery CALL</td><td></td><td></td><td></td><td></td><td></td><td>19.06.2026</td><td>29.06.2026</td></tr>
+          <tr><td>Installation Assistance</td><td></td><td></td><td></td><td></td><td></td><td>12-16.06.2026<br>01.07.2026</td><td>07.07.2026</td></tr>
+          <tr><td>Post Installation CALL . Call</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Post Installation CALL . Condition confirmation</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Photoshoot</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="note">Blank cells mean no date is logged in the tracker tab yet. A dash means the tracker explicitly marked the touchpoint as not applicable or not completed.</div>
+    </section>
+  </main>
+
+  <main id="timeline" class="view" hidden>
+    <section>
+      <div class="secthead"><h2>Client Timelines</h2><span class="owner">one row per client; open to see stage details</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">Samples median</div><div class="val">18.5<span class="unit">days</span></div><div class="desc">2.6 weeks median from PM intro to latest samples tracking. Based on Asma and Gloria.</div><div class="foot"><span class="badge info">Samples</span></div></div>
+        <div class="card"><div class="label">Production median</div><div class="val">14<span class="unit">days</span></div><div class="desc">2.0 weeks median from production kickoff/planning to pre-assembly or cargo pick-up. Based on Jenn, Callie, Maggie.</div><div class="foot"><span class="badge info">Production</span></div></div>
+        <div class="card"><div class="label">Delivery median</div><div class="val">56<span class="unit">days</span></div><div class="desc">8.0 weeks median from cargo pick-up/shipping to delivery, installation prep, or pre-install support. Based on Callie, Maggie, Helena.</div><div class="foot"><span class="badge info">Delivery</span></div></div>
+      </div>
+      <div class="note">Stage medians use the tracker baseline available today. They should be recalculated from Airtable once planned and actual stage dates are complete for every project.</div>
+      <div class="timeline-list">
+        <div class="timeline-head"><span>Client</span><span>Timeline covered</span><span>Tracked time</span><span>Latest stage</span><span>Watch item</span></div>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Asma</span>
+            <span class="timeline-summary">PM intro Jun 15 -> samples tracking Jun 30</span>
+            <span class="timeline-mini">15 days = 2.1 weeks</span>
+            <span class="timeline-mini">Samples</span>
+            <span class="timeline-mini">Two sample batches logged.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Samples</td><td>PM intro Jun 15</td><td>Samples tracking Jun 30</td><td class="num">15</td><td>Two sample batches logged: Ukraine and Chicago.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Gloria</span>
+            <span class="timeline-summary">PM intro May 13 -> samples tracking Jun 4</span>
+            <span class="timeline-mini">22 days = 3.1 weeks</span>
+            <span class="timeline-mini">Samples</span>
+            <span class="timeline-mini">Confirm current Airtable status.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Samples</td><td>PM intro May 13</td><td>Samples tracking Jun 4</td><td class="num">22</td><td>No newer tracker evidence; confirm status in Airtable.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item" open>
+          <summary>
+            <span class="client-name">Jenn</span>
+            <span class="timeline-summary">PM intro May 8 -> pre-assembly photos Jun 26</span>
+            <span class="timeline-mini">49 days = 7.0 weeks</span>
+            <span class="timeline-mini">Manufacturing / pre-assembly</span>
+            <span class="timeline-mini">Next update should be packaging/shipping.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Production planning</td><td>PM intro May 8</td><td>Production launch May 26</td><td class="num">18</td><td>Client concerned about long timeline; organizer confirmation noted.</td></tr>
+                <tr><td>Manufacturing / pre-assembly</td><td>Production launch May 26</td><td>Pre-assembly photos Jun 26</td><td class="num">31</td><td>Next stage should be packaging/shipping update.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Callie</span>
+            <span class="timeline-summary">PM intro Mar 23 -> latest delivery ETA Jul 9</span>
+            <span class="timeline-mini">108 days = 15.4 weeks</span>
+            <span class="timeline-mini">Ground delivery</span>
+            <span class="timeline-mini">Forecast +4 days vs Airtable planned EndDate.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Production planning</td><td>PM intro Mar 23</td><td>Timeline email Mar 25</td><td class="num">2</td><td>Fast kickoff after PM handoff.</td></tr>
+                <tr><td>Pre-assembly to cargo pick-up</td><td>Pre-assembly Apr 22</td><td>Cargo picked up May 4</td><td class="num">12</td><td>Air vs ocean freight and installation options discussed.</td></tr>
+                <tr><td>Shipping / customs</td><td>Airtable planned May 14-Jun 17</td><td>Email fact: container arrived Dallas Jun 25</td><td class="num">42</td><td>Actual shipping/customs end was +8 days vs Airtable planned EndDate.</td></tr>
+                <tr><td>Ground delivery</td><td>Airtable planned Jun 17-Jul 5</td><td>Email fact: pickup succeeded Jul 1; latest ETA Jul 9</td><td class="num">22</td><td>Forecast delivery is +4 days vs Airtable planned EndDate. Reason: LTL carrier availability / pickup delays.</td></tr>
+                <tr><td>Installation prep</td><td>Assembly instructions Jun 29</td><td>Waiting on delivery ETA Jul 9</td><td class="num">-</td><td>Post-install NPS should be asked after delivery and installation are complete.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Maggie</span>
+            <span class="timeline-summary">PM intro Mar 27 -> post-delivery call Jun 19</span>
+            <span class="timeline-mini">62 days = 8.8 weeks</span>
+            <span class="timeline-mini">Post-delivery / install support</span>
+            <span class="timeline-mini">Confirm weekly support follow-up.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Production planning</td><td>PM intro Mar 27</td><td>Timeline email Mar 30</td><td class="num">3</td><td>Fast kickoff after PM handoff.</td></tr>
+                <tr><td>Pre-assembly to cargo pick-up</td><td>Pre-assembly Apr 17</td><td>Cargo picked up Apr 24</td><td class="num">7</td><td>Good stage movement in tracker.</td></tr>
+                <tr><td>Shipping / customs</td><td>Cargo picked up Apr 24</td><td>Cargo in US Jun 1</td><td class="num">38</td><td>Address confirmation and ground delivery coordination followed.</td></tr>
+                <tr><td>Post-delivery / install support</td><td>Delivery scheduling Jun 5</td><td>Post-delivery call Jun 19</td><td class="num">14</td><td>Weekly support call was offered; next check-in needs confirmation.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="timeline-item">
+          <summary>
+            <span class="client-name">Helena</span>
+            <span class="timeline-summary">Shipping tracking Apr 14 -> pre-install call Jun 29</span>
+            <span class="timeline-mini">62 days = 8.8 weeks</span>
+            <span class="timeline-mini">Post-delivery / pre-install</span>
+            <span class="timeline-mini">Log next installation progress touch.</span>
+          </summary>
+          <div class="timeline-detail">
+            <table>
+              <thead><tr><th>Stage</th><th>Start evidence</th><th>End / latest evidence</th><th class="num">Days</th><th>Delay / blocker notes</th></tr></thead>
+              <tbody>
+                <tr><td>Shipping / customs</td><td>Shipping tracking Apr 14</td><td>Cargo in US May 18</td><td class="num">34</td><td>Timeline changes logged repeatedly before US arrival.</td></tr>
+                <tr><td>Ground delivery planning</td><td>Cargo ready May 22-Jun 1</td><td>Delivery planning Jun 24</td><td class="num">23</td><td>Delivery, unloading, installation and GC/Borys call coordination.</td></tr>
+                <tr><td>Post-delivery / pre-install</td><td>Delivery planning Jun 24</td><td>Pre-install call Jun 29</td><td class="num">5</td><td>Assembly expected next week; next update should be logged.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+      <div class="note">This is the starting baseline, not the final KPI calculation. Airtable timeline records should become the source of truth once planned and actual stage dates are complete.</div>
+    </section>
+
+  </main>
+
+  <main id="nps" class="view" hidden>
+    <section>
+      <div class="secthead"><h2>NPS Tracking Plan</h2><span class="owner">start lightweight, make it consistent</span></div>
+      <div class="grid three">
+        <div class="card"><div class="label">Pilot KPI</div><div class="val">NPS<span class="unit">capture</span></div><div class="desc">First measure whether we asked and logged score + reason after post-install calls.</div><div class="foot"><span class="badge watch">Start</span></div></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var html = document.documentElement;
+  try {
+    var saved = localStorage.getItem("corner-pm-kpi-theme");
+    if (saved) html.setAttribute("data-theme", saved);
+  } catch(e) {}
+  document.getElementById("theme-btn").onclick = function(){
+    var cur = html.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    try { localStorage.setItem("corner-pm-kpi-theme", next); } catch(e) {}
+  };
+  var tabs = document.querySelectorAll(".tab");
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      tabs.forEach(function(t){ t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+      document.querySelectorAll(".view").forEach(function(view){ view.hidden = view.id !== tab.dataset.view; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
