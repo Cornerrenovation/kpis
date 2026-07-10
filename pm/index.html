@@ -225,7 +225,7 @@
           <span>Technical Design KPI . average tracked TD time</span>
           <span>Baseline from rows where time was logged</span>
         </div>
-        <div class="hero-num">2.8<span>working days . 22.7 hours average from 3 tracked Borys TD rows</span></div>
+        <div class="hero-num">2.1<span>working days . 17 hours average from 6 tracked Borys TD rows</span></div>
         <div class="track"><div class="fill" style="width:62%"></div></div>
       </div>
     </section>
@@ -233,7 +233,7 @@
     <section>
       <div class="secthead"><h2>Technical Design KPIs</h2><span class="owner">Borys baseline from Technical Drawings sheet</span></div>
       <div class="grid three">
-        <div class="card"><div class="label">1. Average tracked TD time</div><div class="val">2.8<span class="unit">days</span></div><div class="desc">22.7 hours at 8 hours/day. Average of tracked Borys rows after excluding Yorgo and Helena other rooms: Callie 12, Jenn 40, and Ryan 16 hours.</div><div class="foot"><span class="badge info">Baseline</span></div></div>
+        <div class="card"><div class="label">1. Average tracked TD time</div><div class="val">2.1<span class="unit">days</span></div><div class="desc">17 hours at 8 hours/day. Average of tracked Borys rows: Callie 12, Yorgo Master Closet 10, Yorgo Bedroom 1 14, Yorgo Bedroom 2 calc 10, Jenn 40, and Ryan 16 hours.</div><div class="foot"><span class="badge info">Baseline</span></div></div>
         <div class="card"><div class="label">2. Process system usage</div><div class="val">100<span class="unit">%</span></div><div class="desc">Roadmap target: Process System v1 used across 100% of new Design-to-TD projects.</div><div class="foot"><span class="badge ok">Roadmap KPI</span></div></div>
         <div class="card"><div class="label">3. TD status completion</div><div class="val">92<span class="unit">%</span></div><div class="desc">24 of 26 statused, non-hold Borys TD rows are marked done in the schedule after removing Spencer.</div><div class="foot"><span class="badge watch">Baseline</span></div></div>
       </div>
@@ -244,7 +244,7 @@
       <table>
         <thead><tr><th>KPI</th><th>Formula</th><th>Current baseline</th><th>Target</th></tr></thead>
         <tbody>
-          <tr><td>Average tracked TD time</td><td>Average hours from Borys TD schedule rows where model/layout or related time was logged, excluding Yorgo and Helena other rooms. Translate hours into working days using 8 hours = 1 day.</td><td>2.8 working days from 3 tracked rows</td><td>Build baseline, then reduce avoidable time</td></tr>
+          <tr><td>Average tracked TD time</td><td>Average hours from Borys TD schedule rows where model/layout or related time was logged. Count Yorgo Master Closet, Bedroom 1, and Bedroom 2; exclude rows with no logged TD hours. Translate hours into working days using 8 hours = 1 day.</td><td>2.1 working days from 6 tracked rows</td><td>Build baseline, then reduce avoidable time</td></tr>
           <tr><td>Process system usage</td><td>New Design-to-TD projects using the process tracker / all new Design-to-TD projects.</td><td>100% from roadmap</td><td>100%</td></tr>
           <tr><td>TD status completion</td><td>Borys TD rows marked done / statused Borys TD rows, excluding on-hold rows and rows that did not convert into a client.</td><td>24 / 26 = 92%</td><td>90%+</td></tr>
           <tr><td>Schedule predictability</td><td>Completed TD rows finished within planned duration / completed TD rows with plan and fact durations.</td><td>4 / 5 = 80%</td><td>90%+</td></tr>
@@ -254,11 +254,15 @@
     </section>
 
     <section>
-      <div class="secthead"><h2>Current TD Schedule</h2><span class="owner">selected Borys rows from TD schedule; Yorgo and Helena other rooms excluded from average</span></div>
+      <div class="secthead"><h2>Current TD Schedule</h2><span class="owner">selected rows from TD schedule; average counts rows with logged Borys TD hours</span></div>
       <table>
         <thead><tr><th>Client</th><th>Furniture</th><th>Fact dates</th><th>TD status</th><th>Time logged</th></tr></thead>
         <tbody>
           <tr><td>Callie</td><td>Kitchen</td><td>Feb 9 -> Feb 13</td><td class="status ok">Done</td><td>TD split: 12</td></tr>
+          <tr><td>Olga</td><td>Kitchen</td><td>Nov 25 -> Dec 9</td><td class="status ok">Done</td><td>No Borys hours logged; not counted in average</td></tr>
+          <tr><td>Yorgo</td><td>Master Closet</td><td>Started Mar 9</td><td class="status ok">Done</td><td>10 hours</td></tr>
+          <tr><td>Yorgo</td><td>Bedroom 1 (Office)</td><td>Started Mar 9</td><td class="status ok">Done</td><td>14 hours</td></tr>
+          <tr><td>Yorgo</td><td>Bedroom 2 (Office)</td><td>Started Mar 9</td><td class="status ok">Done</td><td>2 hours; calc 10</td></tr>
           <tr><td>Jenn</td><td>Kitchen + pantry</td><td>Mar 25 -> Mar 20</td><td class="status ok">Done</td><td>TD client: 40</td></tr>
           <tr><td>Gloria Feurra</td><td>Kitchen</td><td>Started Jun 18</td><td class="status ok">Done</td><td>-</td></tr>
           <tr><td>Ryan Lenox</td><td>-</td><td>Started Jun 5</td><td class="status muted">Not set</td><td>16 hours</td></tr>
